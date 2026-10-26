@@ -58,6 +58,18 @@
     reveals.forEach(el => el.classList.add('in'));
   }
 
+  // Journal topic filter: the chips show only after this script runs; without it every article is listed
+  const chips = document.querySelectorAll('.filter .chip');
+  const posts = document.querySelectorAll('.journal-feed [data-cat]');
+  const status = document.querySelector('.filter-status');
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    const want = chip.dataset.filter;
+    chips.forEach(c => c.setAttribute('aria-pressed', String(c === chip)));
+    let shown = 0;
+    posts.forEach(p => { const on = want === 'all' || p.dataset.cat === want; p.hidden = !on; if (on) { p.classList.add('in'); shown++; } });
+    if (status) status.textContent = `${shown} ${shown === 1 ? 'article' : 'articles'} shown`;
+  }));
+
   root.classList.add('js-ready');
   requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add('nav-ready')));
 })();
