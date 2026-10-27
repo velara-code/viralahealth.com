@@ -421,3 +421,12 @@ html:not(.js-ready) .filter{display:none}
 .help-list li::before{content:"";position:absolute;left:.2em;top:.62em;width:.45em;height:.45em;border-radius:50%;background:var(--clay)}
 .article-body .help-list+p{margin-top:1.1em}
 .brand-line{font:400 clamp(1.25rem,1.1rem + .6vw,1.6rem)/1.1 var(--serif);letter-spacing:-.01em;margin-bottom:clamp(10px,1.2vw,16px)}.brand-line em{color:var(--accent)}
+/* "Not feeling like yourself?": a text-led lilac panel straight after the hero */
+.not-yourself{padding-bottom:clamp(28px,3vw,44px)}
+.ny-panel{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px clamp(36px,6vw,100px);align-items:start;padding:clamp(30px,4.4vw,64px);border-radius:32px;border:1px solid var(--line);background:radial-gradient(720px 360px at 0% 0%,color-mix(in srgb,var(--vira-bg) 90%,transparent),transparent 72%),radial-gradient(620px 320px at 100% 100%,color-mix(in srgb,var(--mark-3) 18%,transparent),transparent 70%),var(--surface)}
+.ny-head .eyebrow{margin-bottom:14px}
+.ny-head h2{font-size:clamp(1.9rem,1.25rem + 2vw,3rem)}
+.ny-copy p{color:var(--muted);max-width:36em}
+.ny-copy p+p{margin-top:1em}
+.ny-copy .text-link{margin-top:22px}
+@media (max-width:900px){.ny-panel{grid-template-columns:minmax(0,1fr)}}
