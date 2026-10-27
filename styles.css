@@ -11,7 +11,7 @@
 :root{
   color-scheme:light;
   --porcelain:#FAF5F2; --dusk:#2C4560; --dusk-light:#3D5A78; --dusk-deep:#1B2B3E; --night:#131D29;
-  --rose:#A35866; --rose-lift:#D98E9B; --peach:#EBB49F; --ink:#1F2A37; --mist:#DCE5EC; --blush:#F3DCD5;
+  --rose:#A35866; --rose-tint:#E8A6B1; --rose-lift:#D98E9B; --peach:#EBB49F; --ink:#1F2A37; --mist:#DCE5EC; --blush:#F3DCD5;
 
   --bg:var(--porcelain); --surface:#FFFDFB; --text:var(--ink);
   --line:rgba(31,42,55,.12); --line-strong:rgba(31,42,55,.24); --edge:#6E7886;
@@ -20,21 +20,23 @@
   --m1:var(--dusk); --m2:var(--rose); --m3:var(--peach);
   --vs-1:var(--dusk); --vs-2:var(--rose);
   --focus:var(--dusk);
-  --page-glow:radial-gradient(1100px 640px at 100% -12%,rgba(243,220,213,.75),transparent 62%),radial-gradient(900px 560px at -12% 8%,rgba(220,229,236,.7),transparent 62%);
-  --band-mist:linear-gradient(180deg,#DCE5EC 0%,#D2DEE8 100%);
-  --band-blush:linear-gradient(180deg,#F5E2DC 0%,#F0D4CC 100%);
-  --deep:radial-gradient(900px 520px at 92% -6%,rgba(235,180,159,.11),transparent 62%),radial-gradient(760px 480px at -6% 108%,rgba(217,142,155,.07),transparent 62%),linear-gradient(168deg,#34506E 0%,#2C4560 46%,#1B2B3E 100%);
-  --card-deep:radial-gradient(420px 280px at 100% 0%,rgba(235,180,159,.2),transparent 70%),linear-gradient(160deg,#3D5A78 0%,#2C4560 52%,#1E3147 100%);
+  --page-glow:radial-gradient(1100px 640px at 100% -12%,rgba(243,220,213,.5),transparent 62%);
+  /* deep Dusk: plain where it only carries weight; with the VIRALA glow (peach and rose light) only in the hero card,
+     the Meet Vira band and the footer */
+  --deep:linear-gradient(168deg,#2F4A67 0%,#2C4560 40%,#1B2B3E 100%);
+  --deep-glow:radial-gradient(520px 380px at 84% 0%,rgba(240,178,156,.5),rgba(232,166,177,.22) 42%,transparent 72%),radial-gradient(460px 340px at 6% 104%,rgba(232,166,177,.26),transparent 68%),linear-gradient(168deg,#2F4A67 0%,#2C4560 40%,#1B2B3E 100%);
+  --card-deep:radial-gradient(320px 280px at 96% 2%,rgba(240,178,156,.62),rgba(232,166,177,.26) 42%,transparent 74%),radial-gradient(360px 300px at 0% 100%,rgba(232,166,177,.22),transparent 70%),linear-gradient(160deg,#3A5674 0%,#2C4560 50%,#1E3147 100%);
+  --card-plain:linear-gradient(160deg,#34506E 0%,#2C4560 50%,#1E3147 100%);
   --shadow-deep:0 44px 90px -44px rgba(27,43,62,.55);
   --shadow-soft:0 24px 60px -40px rgba(27,43,62,.35);
 
   --serif:"Newsreader",Georgia,"Times New Roman",serif;
   --sans:"Hanken Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   /* one type scale, every page */
-  --fs-display:clamp(2.75rem,1.55rem + 4.6vw,5.25rem);
-  --fs-h1:clamp(2.4rem,1.62rem + 3.1vw,4.25rem);
-  --fs-h2:clamp(2rem,1.5rem + 2vw,3.25rem);
-  --fs-h3:clamp(1.45rem,1.27rem + .75vw,1.875rem);
+  --fs-display:clamp(3rem,1.5rem + 5.6vw,6rem);
+  --fs-h1:clamp(2.6rem,1.6rem + 3.9vw,4.75rem);
+  --fs-h2:clamp(2.3rem,1.45rem + 3.1vw,4rem);
+  --fs-h3:clamp(1.5rem,1.3rem + .85vw,2rem);
   --fs-h4:clamp(1.2rem,1.13rem + .3vw,1.375rem);
   --fs-lede:clamp(1.15rem,1.07rem + .38vw,1.375rem);
   --fs-body:clamp(1.0625rem,1.03rem + .14vw,1.125rem);
@@ -49,24 +51,22 @@
   color-scheme:dark;
   --bg:var(--night); --surface:#1C2A3A; --text:var(--porcelain);
   --line:rgba(250,245,242,.12); --line-strong:rgba(250,245,242,.24); --edge:#93A0AE;
-  --eyebrow:var(--mist); --accent:#E3A3AE; --italic:var(--peach); --marker:var(--peach);
+  --eyebrow:var(--mist); --accent:var(--rose-tint); --italic:var(--rose-tint); --marker:var(--rose-tint);
   --btn:var(--porcelain); --btn-hover:#FFFFFF; --btn-text:var(--ink);
   --m1:var(--porcelain); --m2:var(--peach); --m3:var(--rose-lift);
-  --vs-1:var(--porcelain); --vs-2:var(--peach);
-  --focus:var(--peach);
-  --page-glow:radial-gradient(1100px 640px at 100% -12%,rgba(61,90,120,.38),transparent 62%),radial-gradient(900px 560px at -12% 8%,rgba(217,142,155,.07),transparent 62%);
-  --band-mist:linear-gradient(180deg,#182636 0%,#1C2C3F 100%);
-  --band-blush:linear-gradient(180deg,#2A2427 0%,#30282A 100%);
+  --vs-1:var(--porcelain); --vs-2:var(--rose-tint);
+  --focus:var(--rose-tint);
+  --page-glow:radial-gradient(1100px 640px at 100% -12%,rgba(61,90,120,.38),transparent 62%);
   --shadow-deep:0 44px 90px -44px rgba(0,0,0,.7);
   --shadow-soft:0 24px 60px -40px rgba(0,0,0,.6);
 }
 /* Dusk surfaces: porcelain text, peach italics, porcelain buttons with ink text, the light mark */
-.deep,.join-card,.tier-premium,.site-footer,.promise-band,.mark-badge{
-  --text:var(--porcelain); --eyebrow:var(--porcelain); --italic:var(--peach); --accent:var(--peach); --marker:var(--peach);
+.deep,.join-card,.tier-premium,.site-footer,.promise-band,.mark-badge,.thanks-ig{
+  --text:var(--porcelain); --eyebrow:var(--porcelain); --italic:var(--rose-tint); --accent:var(--rose-tint); --marker:var(--rose-tint);
   --line:rgba(250,245,242,.16); --line-strong:rgba(250,245,242,.3); --edge:rgba(250,245,242,.7);
   --btn:var(--porcelain); --btn-hover:#FFFFFF; --btn-text:var(--ink);
   --m1:var(--porcelain); --m2:var(--peach); --m3:var(--rose-lift);
-  --vs-1:var(--porcelain); --vs-2:var(--peach); --focus:var(--peach);
+  --vs-1:var(--porcelain); --vs-2:var(--rose-tint); --focus:var(--rose-tint);
   color:var(--text)}
 
 /* ---------- base ---------- */
@@ -84,6 +84,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 ::selection{background:var(--blush);color:var(--ink)}
 h1,h2,h3,h4,p,figure,blockquote,ul,ol{margin:0}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:400;font-optical-sizing:auto;text-wrap:balance}
+h1,h2{font-weight:440}
+h1 em,h2 em{font-weight:420}
 h1{font-size:var(--fs-h1);line-height:1.04;letter-spacing:-.022em}
 h2{font-size:var(--fs-h2);line-height:1.08;letter-spacing:-.018em}
 h3{font-size:var(--fs-h3);line-height:1.16;letter-spacing:-.01em}
@@ -96,9 +98,8 @@ p,li{text-wrap:pretty}
 .eyebrow{color:var(--eyebrow);margin-bottom:clamp(14px,1.6vw,20px)}
 .lede{font-size:var(--fs-lede);line-height:1.55;max-width:34em}
 .band{padding-block:var(--section)}
-.band-mist{background:var(--band-mist)}
-.band-blush{background:var(--band-blush)}
 .deep{background:var(--deep)}
+.deep.glow{background:var(--deep-glow)}
 
 /* ---------- controls ---------- */
 .skip{position:fixed;left:16px;top:12px;z-index:200;padding:12px 18px;background:var(--ink);color:var(--porcelain);transform:translateY(-200%);text-decoration:none;border-radius:6px}
@@ -160,14 +161,14 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 /* Vira's symbol: coloured by its ground. Listening: the companion spark gently brightens; nothing spins. */
 .vs{display:block;flex:none}.vs .vs1{fill:var(--vs-1)}.vs .vs2{fill:var(--vs-2)}
 @media (prefers-reduced-motion:no-preference){.vs-hero .vs2,.vs-meet .vs2{animation:vira-listen 2.8s ease-in-out infinite alternate}}
-@keyframes vira-listen{from{opacity:.65}to{opacity:1;filter:drop-shadow(0 0 3px rgba(235,180,159,.9))}}
+@keyframes vira-listen{from{opacity:.6}to{opacity:1;filter:drop-shadow(0 0 4px rgba(232,166,177,.95))}}
 
 /* ---------- the email signup (Kit's plain HTML form, styled as ours) ---------- */
 .signup{max-width:34rem}
 .signup-label{display:block;font-weight:600;margin-bottom:12px}
 .signup-row{display:flex;gap:8px;padding:6px;border-radius:999px;background:var(--surface);border:1px solid var(--line-strong);box-shadow:var(--shadow-soft);transition:border-color .3s var(--ease),box-shadow .3s var(--ease)}
 .signup-row:focus-within{border-color:var(--dusk);box-shadow:0 0 0 3px rgba(44,69,96,.18),var(--shadow-soft)}
-:root[data-theme="dark"] .signup-row:focus-within{border-color:var(--peach);box-shadow:0 0 0 3px rgba(235,180,159,.25)}
+:root[data-theme="dark"] .signup-row:focus-within{border-color:var(--rose-tint);box-shadow:0 0 0 3px rgba(232,166,177,.25)}
 .signup input{flex:1 1 auto;min-width:0;min-height:52px;padding:0 8px 0 20px;border:0;background:transparent;color:var(--text);font:inherit;font-size:1.0625rem}
 .signup input::placeholder{color:var(--edge);opacity:1}
 .signup input:focus{outline:none}
@@ -177,32 +178,33 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 
 /* ---------- homepage: hero ---------- */
 .hero{padding-block:clamp(28px,4vw,64px) clamp(72px,8vw,120px)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);column-gap:clamp(36px,5.4vw,96px);align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);column-gap:clamp(36px,5vw,88px);align-items:center}
 .status-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 16px 7px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.875rem;font-weight:600;margin-bottom:clamp(20px,2.4vw,30px)}
-.pill-dot{width:8px;height:8px;border-radius:50%;background:var(--peach);box-shadow:0 0 0 4px rgba(235,180,159,.35);flex:none}
+.pill-dot{width:8px;height:8px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 4px rgba(163,88,102,.18);flex:none}
 .brand-line{font:400 clamp(1.3rem,1.15rem + .6vw,1.65rem)/1.2 var(--serif);margin-bottom:clamp(10px,1.2vw,16px)}
-.hero h1{font-size:var(--fs-display);line-height:1;letter-spacing:-.028em;margin-bottom:clamp(20px,2.4vw,30px)}
+.hero h1{font-size:clamp(3rem,1.45rem + 4.3vw,5.1rem);line-height:1;letter-spacing:-.03em;margin-bottom:clamp(20px,2.4vw,30px)}
 .hero .lede{max-width:31em}
-.join-card{position:relative;scroll-margin-top:100px;padding:clamp(30px,3.6vw,54px);border-radius:32px;background:var(--card-deep);box-shadow:var(--shadow-deep)}
-.join-card h2{font-size:clamp(2.1rem,1.5rem + 2vw,3.25rem);line-height:1.04;margin-bottom:16px}
+.join-card{position:relative;scroll-margin-top:100px;padding:clamp(30px,3.6vw,54px);border-radius:32px;background:var(--card-deep);box-shadow:0 50px 100px -44px rgba(27,43,62,.6),0 0 0 1px rgba(255,255,255,.06) inset}
+.join-card h2{font-size:clamp(2.2rem,1.5rem + 2.1vw,3.4rem);line-height:1.02;margin-bottom:16px}
 .jc-lede{max-width:30em;margin-bottom:clamp(24px,2.6vw,32px)}
 .jc-form{display:grid;gap:12px}
 .jc-form input{width:100%;min-height:60px;padding:0 20px;border-radius:16px;border:1px solid transparent;background:var(--porcelain);color:var(--ink);font:inherit;font-size:1.0625rem;transition:box-shadow .3s var(--ease)}
 .jc-form input::placeholder{color:#6E7886;opacity:1}
-.jc-form input:focus{outline:none;box-shadow:0 0 0 3px var(--peach)}
+.jc-form input:focus{outline:none;box-shadow:0 0 0 3px var(--rose-tint)}
 .jc-form .button{width:100%;min-height:58px;border-radius:16px;box-shadow:none}
 .jc-form .signup-note{margin-top:4px}
 
 /* ---------- homepage: "Not feeling like yourself?" over the soft sea ---------- */
-.img-band{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(110px,13vw,190px);background:var(--dusk);
-  --text:var(--porcelain);--eyebrow:var(--porcelain);--italic:var(--blush);--line:rgba(250,245,242,.3);color:var(--porcelain)}
+.img-band{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(120px,15vw,220px);background:var(--dusk);
+  --text:#FFFFFF;--eyebrow:#FFFFFF;--italic:var(--rose-tint);--line:rgba(255,255,255,.4);color:#FFFFFF}
 .img-band .band-photo{position:absolute;inset:0;z-index:-2;margin:0;border-radius:0;background:none}
 .img-band .band-photo img{filter:saturate(.85) contrast(.95)}
-.img-band::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(860px 500px at 50% 52%,rgba(27,43,62,.66),rgba(27,43,62,.34) 70%,rgba(27,43,62,.12)),linear-gradient(180deg,rgba(44,69,96,.24),rgba(44,69,96,.36))}
-:root[data-theme="dark"] .img-band::before{background:linear-gradient(180deg,rgba(19,29,41,.6),rgba(19,29,41,.74))}
-.img-band h2{text-shadow:0 1px 18px rgba(19,29,41,.3)}
+.img-band::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(980px 560px at 50% 52%,rgba(27,43,62,.82),rgba(27,43,62,.5) 66%,rgba(27,43,62,.22)),linear-gradient(180deg,rgba(44,69,96,.3),rgba(27,43,62,.55))}
+:root[data-theme="dark"] .img-band::before{background:radial-gradient(980px 560px at 50% 52%,rgba(19,29,41,.86),rgba(19,29,41,.62) 66%,rgba(19,29,41,.44)),linear-gradient(180deg,rgba(19,29,41,.3),rgba(19,29,41,.55))}
+.img-band h2{text-shadow:0 2px 24px rgba(19,29,41,.35)}
+.img-band .ny-line{text-shadow:0 1px 14px rgba(19,29,41,.35)}
 .ny-focus{max-width:860px;margin-inline:auto;text-align:center;display:grid;justify-items:center}
-.ny-focus h2{font-size:var(--fs-h2);margin-bottom:clamp(18px,2.2vw,26px)}
+.ny-focus h2{font-size:clamp(2.8rem,1.5rem + 5.2vw,6rem);line-height:1;letter-spacing:-.025em;margin-bottom:clamp(20px,2.4vw,30px)}
 .ny-line{font-size:var(--fs-lede);line-height:1.55;max-width:32em;margin-bottom:clamp(22px,2.6vw,32px)}
 
 /* ---------- homepage: Why VIRALA ---------- */
@@ -216,8 +218,8 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 /* ---------- homepage: Free and Premium (the same list; Premium's own first) ---------- */
 .tiers{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(16px,2vw,28px);align-items:start}
 .tier{border-radius:32px;padding:clamp(28px,3.4vw,52px)}
-.tier-free{background:var(--surface);box-shadow:var(--shadow-soft)}
-.tier-premium{background:var(--card-deep);box-shadow:var(--shadow-deep)}
+.tier-free{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+.tier-premium{background:var(--card-plain);box-shadow:var(--shadow-deep)}
 .o-tier{font:400 1.5rem/1.2 var(--serif)}
 .o-tier span{margin-left:8px;font:600 var(--fs-label)/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--eyebrow);vertical-align:.28em}
 .tier h3{margin:8px 0 0;font-style:italic;color:var(--italic)}
@@ -233,7 +235,7 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 .tier-premium li.shared{padding-block:11px}
 .tier-premium li.shared b{font-size:1.125rem}
 .tier-premium li.own+li.shared{border-top:1px solid var(--line-strong);margin-top:6px}
-.ptag{font:600 .7rem/1 var(--sans);font-style:normal;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--peach);border-radius:999px;padding:6px 10px;align-self:center}
+.ptag{font:600 .7rem/1 var(--sans);font-style:normal;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--rose-tint);border-radius:999px;padding:6px 10px;align-self:center}
 
 /* ---------- homepage: Meet Vira (a deep Dusk band) ---------- */
 .mv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(22px,3.4vw,52px);align-items:start;max-width:920px;margin-inline:auto}
@@ -243,10 +245,13 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 
 /* ---------- Our promise / Her promise ---------- */
 .promise-inner{text-align:center;display:grid;justify-items:center}
+.promise-calm h2{font-size:clamp(2.6rem,1.5rem + 4.4vw,5.25rem);line-height:1.02;letter-spacing:-.025em}
+.promise-calm{border-top:1px solid var(--line)}
 .promise-inner h2{margin-bottom:22px}
 .promise-inner p:not(.eyebrow){font-size:var(--fs-lede);line-height:1.55;max-width:34em}
 .promise-inner .button{margin-top:32px}
 .promise-band{background:var(--deep);padding-block:var(--section)}
+.mv h2{font-size:clamp(2.6rem,1.5rem + 4.4vw,5.25rem);line-height:1}
 
 /* ---------- Journal cards ---------- */
 .journal-mini{padding-block:var(--section) clamp(56px,6vw,96px)}
@@ -265,14 +270,13 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 
 /* ---------- the closing signup ---------- */
 .join-end{padding-bottom:var(--section)}
-.join-end-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px clamp(40px,6vw,100px);align-items:end;padding:clamp(32px,4.4vw,64px);border-radius:32px;background:radial-gradient(640px 320px at 100% 0%,rgba(243,220,213,.95),transparent 70%),var(--band-mist);box-shadow:var(--shadow-soft)}
-:root[data-theme="dark"] .join-end-inner{background:radial-gradient(640px 320px at 100% 0%,rgba(217,142,155,.12),transparent 70%),var(--band-mist)}
+.join-end-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px clamp(40px,6vw,100px);align-items:end;padding:clamp(32px,4.4vw,64px);border-radius:32px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-soft)}
 .join-end h2{font-size:clamp(1.75rem,1.35rem + 1.5vw,2.6rem);margin-bottom:14px}
 .join-end-inner>div>p{max-width:30em}
 .join-end .signup-label{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 
 /* ---------- footer ---------- */
-.site-footer{background:var(--deep);padding-block:clamp(56px,6.4vw,88px) 30px}
+.site-footer{background:var(--deep-glow);padding-block:clamp(56px,6.4vw,88px) 30px}
 .footer-top{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr) minmax(0,1fr);gap:32px clamp(30px,5vw,80px);align-items:start;padding-bottom:clamp(40px,4.4vw,60px)}
 .lockup-footer{gap:16px}.lockup-footer .mark{height:clamp(44px,4.2vw,56px)}
 .wm-footer{height:clamp(28px,3vw,38px)}
@@ -288,7 +292,7 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 .thanks .mark-thanks{height:clamp(64px,7vw,84px);margin-bottom:clamp(24px,3vw,34px)}
 .thanks h1{margin-bottom:20px}
 .thanks .lede{margin-bottom:clamp(36px,4.4vw,56px)}
-.thanks-ig{width:100%;padding:clamp(30px,4vw,52px);margin-bottom:34px;border-radius:32px;background:var(--band-blush)}
+.thanks-ig{width:100%;padding:clamp(30px,4vw,52px);margin-bottom:34px;border-radius:32px;background:var(--card-plain);box-shadow:var(--shadow-deep)}
 .thanks-ig h2{font-size:clamp(1.75rem,1.35rem + 1.5vw,2.6rem);margin-bottom:12px}
 .thanks-ig p:not(.eyebrow){margin:0 auto 26px;max-width:30em}
 .ig{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;flex:none}.ig .ig-dot{fill:currentColor;stroke:none}
@@ -308,11 +312,14 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 .wc-go{font-weight:600}
 
 /* ---------- Meet Vira page ---------- */
-.vira-intro{padding-block:clamp(36px,5vw,84px) clamp(56px,6.4vw,96px)}
-.vi-copy{max-width:780px}
-.vira-intro .vs-hero{width:clamp(56px,5vw,72px);height:auto;margin-bottom:26px}
+.vira-intro{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,4vw,72px);align-items:center;padding-block:clamp(36px,5vw,84px) clamp(56px,6.4vw,96px)}
+.vi-copy{max-width:760px}
 .vi-copy h1{font-size:var(--fs-display);line-height:1;letter-spacing:-.028em;margin-bottom:22px}
 .vi-copy .lede{max-width:34em;margin-bottom:clamp(26px,3vw,36px)}
+.vi-art{position:relative;display:grid;place-items:center;aspect-ratio:1;max-width:460px;width:100%;justify-self:center}
+.vi-art::before{content:"";position:absolute;inset:4%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(235,180,159,.55),rgba(232,166,177,.32) 38%,rgba(220,229,236,.22) 60%,transparent 72%);filter:blur(10px)}
+:root[data-theme="dark"] .vi-art::before{background:radial-gradient(circle at 50% 50%,rgba(232,166,177,.28),rgba(61,90,120,.4) 45%,transparent 72%)}
+.vi-art .vs-hero{position:relative;width:52%;height:auto}
 .vira-points{padding-block:clamp(64px,7vw,104px)}
 .vira-points h2{margin-bottom:clamp(32px,4vw,52px)}
 .vcards{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
@@ -320,20 +327,6 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 .vcard:nth-child(4),.vcard:nth-child(5){grid-column:span 3}
 .vcard h3{margin-bottom:12px}
 .vcard p{max-width:34em}
-.convo{padding-block:var(--section)}
-.convo-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,5vw,88px);align-items:center}
-.chat{margin:0;padding:clamp(22px,2.8vw,36px);border-radius:32px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-soft);position:relative}
-.chat-head{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:6px;border-bottom:1px solid var(--line)}
-.chat-head .vs{width:30px;height:30px}
-.chat-head b{font:450 1.2rem/1.2 var(--serif)}
-.chat-label{margin-left:auto;padding:5px 10px;border-radius:999px;background:var(--blush);color:var(--ink);font-size:.7rem}
-.bubble{border-radius:22px;padding:14px 18px;max-width:86%;line-height:1.55;font-size:1.0625rem}
-.bubble p{margin:0}
-.bubble.her{margin:22px 0 14px auto;width:fit-content;background:var(--dusk);color:var(--porcelain);border-bottom-right-radius:6px}
-.bubble.vira{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start;background:var(--mist);color:var(--ink);border-bottom-left-radius:6px;--vs-1:var(--dusk);--vs-2:var(--rose)}
-.bubble.vira .vs-avatar{width:30px;height:30px}
-:root[data-theme="dark"] .bubble.vira{background:#26394F;color:var(--porcelain);--vs-1:var(--porcelain);--vs-2:var(--peach)}
-:root[data-theme="dark"] .bubble.her{background:var(--porcelain);color:var(--ink)}
 
 /* ---------- inner pages ---------- */
 .page-hero{padding-block:clamp(28px,3.6vw,56px) clamp(56px,6vw,96px)}
@@ -362,7 +355,7 @@ html:not(.js-ready) .filter{display:none}
 .gifts h3{margin-bottom:10px}
 .gifts p{max-width:30em}
 .editorial{scroll-margin-top:90px}
-.band-mist .gift-n,.band-blush .gift-n{color:var(--eyebrow)}
+
 .faq-wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:32px clamp(40px,6vw,110px);padding-block:var(--section)}
 .faq-wrap h2{margin-bottom:20px}
 .faq-contact{max-width:24em}
@@ -398,7 +391,7 @@ html:not(.js-ready) .filter{display:none}
 .article-photo{aspect-ratio:21/9;border-radius:var(--radius);margin-bottom:clamp(8px,1vw,16px)}
 .article-layout{display:grid;grid-template-columns:minmax(0,240px) minmax(0,40rem);justify-content:center;gap:clamp(40px,6vw,96px);padding-block:clamp(44px,5vw,72px) var(--section)}
 .article-layout .prose{width:auto;margin:0}
-.brief{align-self:start;position:sticky;top:104px;padding:22px 24px;border-radius:22px;background:var(--band-mist)}
+.brief{align-self:start;position:sticky;top:104px;padding:22px 24px;border-radius:22px;background:var(--surface);border:1px solid var(--line)}
 .brief .label{color:var(--eyebrow);margin-bottom:10px}
 .brief ul{list-style:none;padding:0;margin:0}
 .brief li{padding:12px 0;border-top:1px solid var(--line);font:450 1.1rem/1.35 var(--serif)}
@@ -419,7 +412,7 @@ html:not(.js-ready) .filter{display:none}
 .refs h2{margin:0 0 .6em;font:600 var(--fs-label)/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--eyebrow)}
 .refs ol{list-style:none;padding:0;margin:0}
 .refs li{display:grid;grid-template-columns:2.4em minmax(0,1fr);padding:14px 0;border-top:1px solid var(--line);scroll-margin-top:110px;font-size:1rem;line-height:1.5;max-width:none}
-.refs li:target{background:rgba(235,180,159,.2)}
+.refs li:target{background:rgba(163,88,102,.1)}
 .ref-n{font:italic 400 1.15rem/1.4 var(--serif);color:var(--accent)}
 .ref-pub{font-size:.7rem;letter-spacing:.12em}
 .ref-title{display:inline;font:450 1.12rem/1.35 var(--serif);text-decoration:none}
@@ -451,7 +444,8 @@ html:not(.js-ready) .filter{display:none}
   .join-card{margin-top:clamp(32px,5vw,44px)}
   .article-layout{grid-template-columns:minmax(0,40rem)}
   .brief{position:static}
-  .convo-grid{grid-template-columns:minmax(0,1fr)}
+  .vira-intro{grid-template-columns:minmax(0,1fr)}
+  .vi-art{order:-1;max-width:200px;justify-self:start;margin-bottom:-8px}
 }
 @media (max-width:900px){
   .beliefs,.faq-wrap,.join-end-inner{grid-template-columns:minmax(0,1fr)}
