@@ -124,7 +124,7 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 .mh-rule{flex:1 1 40px;height:1px;background:var(--line-strong);transform-origin:left center}
 .gift-n,.ch-n{display:block;font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.2;color:var(--accent);margin-bottom:10px;font-variant-numeric:lining-nums}
 /* feature bands: VIRALA Fig in light, deep fig with a soft glow in dark */
-.promise-band,.site-footer{--ink:var(--on-feature);--muted:var(--on-feature-2);--accent:var(--feature-accent);--line:rgba(255,255,255,.14);--line-strong:rgba(255,255,255,.22);--edge:rgba(255,255,255,.55);--focus:var(--feature-accent);--mark-1:#FFF5F2;--mark:#FFF5F2;--brand:#FFF5F2;--brand-pressed:#FBE3EC;--on-brand:#4E1A3D;background:radial-gradient(900px 480px at 85% 0%,rgba(142,63,114,.55),transparent 65%),var(--feature);color:var(--ink)}
+.promise-band,.site-footer,.join-card,.tier-premium{--vs-1:#F7EDEA;--vs-2:#F6C2B0;--vs-3:#F6C2B0;--ink:var(--on-feature);--muted:var(--on-feature-2);--accent:var(--feature-accent);--line:rgba(255,255,255,.14);--line-strong:rgba(255,255,255,.22);--edge:rgba(255,255,255,.55);--focus:var(--feature-accent);--mark-1:#FFF5F2;--mark:#FFF5F2;--brand:#FFF5F2;--brand-pressed:#FBE3EC;--on-brand:#4E1A3D;background:radial-gradient(900px 480px at 85% 0%,rgba(142,63,114,.55),transparent 65%),var(--feature);color:var(--ink)}
 .promise-band ::selection,.site-footer ::selection{background:#8E3F72;color:#fff}
 
 /* ---------- brand lockup: the restored Life Chapters mark with the signature wordmark ---------- */
@@ -136,18 +136,12 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 
 /* ---------- home: hero (one purpose: join the list) ---------- */
 .hero{padding-block:clamp(16px,2.6vw,40px) clamp(56px,6vw,96px)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);column-gap:clamp(32px,5vw,84px);align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);column-gap:clamp(32px,5vw,84px);align-items:center}
 .status-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 15px 7px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.8rem;font-weight:600;color:var(--muted);margin-bottom:clamp(18px,2.2vw,28px)}
 .pill-dot{width:8px;height:8px;border-radius:50%;background:var(--clay);box-shadow:0 0 0 4px color-mix(in srgb,var(--clay) 24%,transparent);flex:none}
-.hero h1{font-size:clamp(2.4rem,1.5rem + 3vw,4.2rem);line-height:.94;letter-spacing:-.035em;margin-bottom:clamp(18px,2vw,26px)}
-.hero .lede{max-width:31em}
+.hero h1{font-size:clamp(2.9rem,1.5rem + 4.4vw,5.8rem);line-height:.92;letter-spacing:-.035em;margin-bottom:clamp(18px,2vw,26px)}
+.hero .lede{max-width:28em;font-size:clamp(1.15rem,1.02rem + .5vw,1.4rem);color:var(--muted)}
 .join{margin-top:clamp(26px,3vw,40px);scroll-margin-top:110px}
-/* the brand plate: the Life Chapters mark at scale on VIRALA Fig, with the promise set in type */
-.plate{position:relative;border-radius:36px;overflow:hidden;aspect-ratio:1/1.08;--mark-1:#FFF5F2;--mark-2:#F2987C;--mark-3:#E9A7B4;background:radial-gradient(560px 420px at 92% 4%,rgba(224,122,95,.42),transparent 62%),radial-gradient(620px 460px at 0% 100%,rgba(142,63,114,.7),transparent 64%),var(--feature);color:var(--on-feature);box-shadow:0 40px 80px -48px rgba(40,10,25,.7)}
-.plate-inner{position:absolute;inset:0;display:grid;grid-template-rows:1fr auto;justify-items:center;padding:clamp(36px,5vw,64px) clamp(28px,4vw,56px) clamp(30px,3.6vw,48px)}
-.mark-plate{height:auto;width:min(46%,240px);align-self:center;filter:drop-shadow(0 30px 40px rgba(20,4,14,.35))}
-.plate-line{justify-self:start;font:400 clamp(1.44rem,0.94rem + 1.58vw,2.45rem)/.98 var(--serif);letter-spacing:-.02em}
-.plate-line em{color:var(--feature-accent)}
 
 /* the email signup: Kit's plain HTML form, styled as ours */
 .signup{max-width:34rem}
@@ -351,8 +345,7 @@ html:not(.js-ready) .filter{display:none}
 .js-ready .reveal.in{opacity:1;transform:none}
 .js-ready .hero-copy>*{animation:rise 1.1s var(--ease) both}
 .js-ready .hero-copy>*:nth-child(2){animation-delay:.06s}.js-ready .hero-copy>*:nth-child(3){animation-delay:.12s}.js-ready .hero-copy>*:nth-child(n+4){animation-delay:.2s}
-.js-ready .plate{animation:rise 1.3s .15s var(--ease) both}
-.js-ready .vira-hero h1,.js-ready .vira-hero .lede{animation:rise 1.1s .35s var(--ease) both}
+.js-ready .js-ready .vira-hero h1,.js-ready .vira-hero .lede{animation:rise 1.1s .35s var(--ease) both}
 .js-ready .vira-hero .lede{animation-delay:.55s}
 .js-ready .mh-rule{animation:draw 1.4s .2s var(--ease) both}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
@@ -368,8 +361,6 @@ html:not(.js-ready) .filter{display:none}
   .brief{position:static}
   .brief ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 24px}
   .hero-grid{grid-template-columns:minmax(0,1fr)}
-  .plate{margin-top:clamp(36px,5vw,52px);aspect-ratio:16/10}
-  .mark-plate{width:auto;height:58%}
   .offer-grid{grid-template-columns:minmax(0,1fr)}
   .offer-free h3{padding-top:24px}
 }
@@ -392,9 +383,7 @@ html:not(.js-ready) .filter{display:none}
   .signup-row{flex-direction:column;border-radius:24px;padding:6px}
   .signup input{padding:0 14px}
   .signup .button{width:100%;justify-content:center}
-  .plate{aspect-ratio:1/1;border-radius:28px}
-  .mark-plate{height:auto;width:42%}
-  .button-ig{width:100%;justify-content:center;font-size:.9rem;padding-inline:18px}
+      .button-ig{width:100%;justify-content:center;font-size:.9rem;padding-inline:18px}
   .main-nav .nav-join{display:none}
   .js-ready .main-nav .nav-join{display:inline-flex}
   .post-grid,.more-reading .post-grid{grid-template-columns:minmax(0,1fr)}
@@ -410,7 +399,7 @@ html:not(.js-ready) .filter{display:none}
   .wm{color:CanvasText}.mark path{fill:CanvasText}
   .mh-rule{background:CanvasText}
 }
-@media print{.site-header,.site-footer,.more-reading,.signup,.plate{display:none}.promise-band{background:none;color:#000}}
+@media print{.site-header,.site-footer,.more-reading,.signup,.promise-band{background:none;color:#000}}
 .journal-feed .post-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
 .standards{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 28px;padding:0 0 var(--section);font-family:var(--serif);font-size:clamp(1.25rem,1.1rem + .6vw,1.6rem);line-height:1.35}
 .standards .text-link{font-family:var(--sans)}
@@ -430,3 +419,136 @@ html:not(.js-ready) .filter{display:none}
 .ny-copy p+p{margin-top:1em}
 .ny-copy .text-link{margin-top:22px}
 @media (max-width:900px){.ny-panel{grid-template-columns:minmax(0,1fr)}}
+/* the hero's community card: the signup is the first screen's visual focus */
+.join-card{position:relative;scroll-margin-top:100px;padding:clamp(30px,3.6vw,56px);border-radius:32px;border:1px solid rgba(255,255,255,.08);background:radial-gradient(560px 360px at 100% 0%,rgba(224,122,95,.38),transparent 68%),radial-gradient(560px 380px at 0% 100%,rgba(142,63,114,.6),transparent 70%),var(--feature);box-shadow:0 50px 100px -48px rgba(40,10,25,.7)}
+.join-card .eyebrow{margin-bottom:14px}
+.join-card h2{font-size:clamp(2.1rem,1.4rem + 2.2vw,3.4rem);line-height:1;margin-bottom:16px}
+.jc-lede{color:var(--muted);max-width:30em;margin-bottom:clamp(24px,2.6vw,34px)}
+.jc-form{display:grid;gap:12px}
+.jc-form input{width:100%;min-height:60px;padding:0 20px;border-radius:16px;border:1px solid transparent;background:#FFF5F2;color:#22121D;font:inherit;font-size:1.05rem;transition:box-shadow .3s var(--ease)}
+.jc-form input::placeholder{color:#94737F;opacity:1}
+.jc-form input:focus{outline:none;box-shadow:0 0 0 3px var(--feature-accent)}
+.jc-form .button{width:100%;justify-content:center;min-height:58px;border:0;border-radius:16px;font-size:1rem}
+.jc-form .signup-note{margin-top:4px}
+:root{--peach:#F6C2B0}
+:root[data-theme="dark"]{--peach:#6B2E4A}
+:root[data-theme="dark"] .join-card{box-shadow:0 44px 90px -50px rgba(0,0,0,.8)}
+@media (max-width:1100px){.join-card{margin-top:clamp(28px,5vw,40px)}}
+@media (forced-colors:active){.jc-form input{border:1px solid CanvasText}}
+/* ---------- focus pass (27 Oct): one focal point per section; hierarchy, scale and air ---------- */
+.hero{padding-block:clamp(20px,3vw,48px) clamp(72px,8vw,128px)}
+.jc-form .signup-note a{color:inherit}
+/* Not feeling like yourself? An open, centred moment: headline, one line, one link */
+.not-yourself{padding-block:clamp(24px,3vw,48px) clamp(80px,9vw,140px)}
+.ny-focus{max-width:860px;margin-inline:auto;text-align:center;display:grid;justify-items:center}
+.ny-focus h2{font-size:clamp(2.6rem,1.5rem + 4vw,5.2rem);line-height:.95;letter-spacing:-.03em;margin-bottom:clamp(20px,2.4vw,30px)}
+.ny-line{font-size:clamp(1.15rem,1.02rem + .5vw,1.4rem);line-height:1.55;color:var(--muted);max-width:32em;margin-bottom:clamp(22px,2.6vw,32px)}
+/* Why VIRALA: three big numbered steps */
+.approach{padding-block:clamp(72px,8vw,128px);border-top:1px solid var(--line)}
+.approach .sec-head{max-width:38em;margin-bottom:clamp(40px,5vw,72px)}
+.approach .sec-head h2,.offer .sec-head h2{font-size:clamp(2.1rem,1.3rem + 2.8vw,3.8rem);line-height:1}
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(32px,4vw,64px)}
+.step-n{display:block;font:italic 400 clamp(3.4rem,2rem + 4vw,6rem)/.9 var(--serif);color:var(--accent);letter-spacing:-.04em;margin-bottom:18px}
+.step h3{font-size:clamp(1.5rem,1.2rem + 1vw,2.1rem);line-height:1.08;margin-bottom:12px}
+.step p{color:var(--muted);max-width:24em}
+/* What we're building: Free and Premium, readable at a glance */
+.offer{padding-block:clamp(56px,6vw,96px) clamp(80px,9vw,140px)}
+.tiers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.tier{border-radius:32px;padding:clamp(28px,3.4vw,52px);border:1px solid var(--line)}
+.tier-free{background:var(--surface)}
+
+.tier h3{font-size:clamp(1.7rem,1.3rem + 1vw,2.2rem);margin:clamp(14px,1.6vw,20px) 0 0}
+.tier .o-tier{margin:0}
+.tier ul{list-style:none;padding:0;margin:clamp(20px,2.4vw,30px) 0 0}
+.tier li{display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--line-strong)}
+.tier li b{font:400 clamp(1.35rem,1.15rem + .6vw,1.7rem)/1.1 var(--serif)}
+.tier li span{color:var(--muted);font-size:.98rem}
+.offer-note{margin-top:22px}
+/* Our promise: a calm full-width lilac band */
+.promise-calm{background:var(--vira-bg);padding-block:clamp(80px,10vw,150px)}
+.promise-calm .promise-inner{text-align:center;display:grid;justify-items:center}
+.promise-calm h2{font-size:clamp(2.6rem,1.5rem + 4vw,5.2rem);line-height:.95;letter-spacing:-.03em;margin-bottom:clamp(20px,2.4vw,30px)}
+.promise-calm p:not(.eyebrow){color:var(--muted);max-width:34em;font-size:clamp(1.1rem,1rem + .4vw,1.3rem)}
+/* Journal: image, category, title, time */
+.journal-mini{padding-block:clamp(80px,9vw,140px) clamp(56px,6vw,96px)}
+.journal-mini .post-title{font-size:clamp(1.5rem,1.2rem + 1vw,2.1rem)}
+/* Meet Vira and About: clearer hierarchy, more air, bigger key lines (no text removed) */
+.vira-hero h1{font-size:clamp(3.2rem,1.8rem + 5vw,6.4rem);line-height:.9}
+.vira-hero .lede{font-size:clamp(1.15rem,1.02rem + .5vw,1.4rem)}
+.vira-chapters{padding-top:clamp(24px,3vw,48px)}
+.vira-chapters .section-title{font-size:clamp(2.1rem,1.3rem + 2.8vw,3.8rem);line-height:1;margin-bottom:clamp(40px,5vw,72px)}
+.chapters li{padding:clamp(28px,3.4vw,48px) 0}
+.chapters .ch-n{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.6rem)}
+.chapters h3{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.6rem)}
+.chapters p{font-size:1.05rem}
+.page-about .page-hero h1{font-size:clamp(2.6rem,1.5rem + 4vw,5.2rem);line-height:.95}
+.page-about .page-hero .lede{font-size:clamp(1.15rem,1.02rem + .5vw,1.4rem)}
+.beliefs{padding-block:clamp(24px,3vw,48px) clamp(80px,9vw,140px)}
+.beliefs-head h2{font-size:clamp(2.1rem,1.3rem + 2.8vw,3.8rem);line-height:1}
+.gifts{row-gap:clamp(40px,4.4vw,64px)}
+.gifts h3{font-size:clamp(1.5rem,1.2rem + 1vw,2.1rem);line-height:1.08;margin-bottom:12px}
+.gifts p{font-size:1.02rem}
+.editorial .sec-head h2,.faq-wrap h2{font-size:clamp(2.1rem,1.3rem + 2.8vw,3.8rem);line-height:1}
+@media (max-width:900px){.steps,.tiers{grid-template-columns:minmax(0,1fr)}.ny-focus{text-align:left;justify-items:start}.promise-calm .promise-inner{text-align:left;justify-items:start}}
+.tiers{align-items:start}
+.approach .sec-head,.offer .sec-head{max-width:54em}
+/* ---------- round 2 (Founder review, 27 Oct) ---------- */
+/* Vira's symbol: coloured by the theme; Fig surfaces switch it to porcelain and peach */
+:root{--vs-1:#4E1A3D;--vs-2:#A13F28;--vs-3:#A13F28}
+:root[data-theme="dark"]{--vs-1:#F6E4EC;--vs-2:#F2987C;--vs-3:#F6C2B0}
+.vs{display:block;flex:none}.vs .vs1{fill:var(--vs-1)}.vs .vs2{fill:var(--vs-2)}.vs .vs3{fill:var(--vs-3)}
+/* a living mark: the point of attention lifts and settles, as if listening */
+@media (prefers-reduced-motion:no-preference){.vs-hero .vs3{animation:vira-listen 3.2s var(--ease) infinite alternate}}
+@keyframes vira-listen{from{transform:translate(0,0)}to{transform:translate(1.4px,-3.5px)}}
+/* What we're building: Premium is the larger Fig card the eye goes to; Free sits beside it, calm and compact */
+.tiers{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);align-items:stretch}
+.tier-free{padding:clamp(24px,2.8vw,40px)}
+.tier-free li{padding:12px 0}.tier-free li b{font-size:clamp(1.15rem,1.05rem + .3vw,1.35rem)}.tier-free li span{font-size:.92rem}
+.tier-premium{padding:clamp(30px,3.8vw,56px);box-shadow:0 44px 90px -50px rgba(40,10,25,.6)}
+.tier-premium .o-tier span{color:var(--feature-accent)}
+.plus{margin:clamp(18px,2vw,26px) 0 0;font:italic 400 clamp(1.6rem,1.2rem + 1.2vw,2.3rem)/1.1 var(--serif);color:var(--feature-accent)}
+.tier-premium li{padding:18px 0}
+.tier-premium li b{font-size:clamp(1.6rem,1.3rem + 1vw,2.2rem)}
+.tier-premium li span{font-size:1rem}
+.tier-premium .pi-vira{grid-template-columns:auto minmax(0,1fr);column-gap:16px;align-items:center}
+.tier-premium .pi-vira .vs-item{grid-row:span 2;width:clamp(44px,4vw,56px);height:auto}
+/* Meet Vira: the symbol and five cards carry the page; about two screens on desktop */
+.vira-intro{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center;padding-block:clamp(24px,4vw,64px) clamp(48px,6vw,88px)}
+.vi-symbol{width:clamp(150px,18vw,260px);aspect-ratio:1;border-radius:40px;display:grid;place-items:center;background:radial-gradient(circle at 70% 25%,color-mix(in srgb,var(--peach,#F6C2B0) 55%,transparent),transparent 65%),var(--vira-bg)}
+.vi-symbol .vs-hero{width:68%;height:auto}
+.vi-copy .eyebrow{margin-bottom:12px}
+.vi-copy h1{font-size:clamp(2.6rem,1.6rem + 3.2vw,4.4rem);line-height:.95;letter-spacing:-.03em;margin-bottom:16px}
+.vi-copy .lede{font-size:clamp(1.15rem,1.02rem + .5vw,1.4rem);color:var(--muted);max-width:28em;margin-bottom:clamp(22px,2.6vw,32px)}
+.vira-points{padding-bottom:clamp(64px,7vw,110px)}
+.vira-points h2{font-size:clamp(1.8rem,1.2rem + 2vw,2.8rem);line-height:1;margin-bottom:clamp(24px,3vw,40px)}
+.vcards{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.4vw,20px)}
+.vcard{border-radius:24px;padding:clamp(20px,2vw,28px);background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.vc-n{font:italic 400 clamp(1.8rem,1.4rem + 1vw,2.4rem)/1 var(--serif);color:var(--accent)}
+.vcard h3{font-size:clamp(1.2rem,1.05rem + .5vw,1.45rem);line-height:1.1}
+.vcard p{color:var(--muted);font-size:.95rem;line-height:1.5}
+.page-vira .promise-band{padding-block:clamp(56px,7vw,100px)}
+@media (max-width:1100px){.vcards{grid-template-columns:repeat(3,minmax(0,1fr))}.tiers{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:700px){.vcards{grid-template-columns:minmax(0,1fr)}.vira-intro{grid-template-columns:minmax(0,1fr)}.vi-symbol{width:120px;border-radius:30px}}
+/* ---------- PALETTE TEST (branch palette-soft-test only; not for the site): softer, misty, matching the new Instagram ----------
+   Porcelain stays the ground; Fig stays the ink and the small brand anchor (header button, mark); large Fig surfaces become
+   deep mist; lilac becomes mist; peach becomes powdery; clay softens. Every pair checked for WCAG AA (see the report). */
+:root{
+  --accent:#98513D;                 /* small accent text: 5.1:1 on porcelain, 4.8:1 on the mist band */
+  --clay:#B5654C; --peach:#F3D3C7;
+  --vira-bg:#E4E9EE;                /* mist band (was lilac) */
+  --feature:#566A7C;                /* deep mist: large surfaces (was Fig) */
+  --on-feature:#F7EDEA; --on-feature-2:#E2E8EE; --feature-accent:#E8B4A0;
+  --accent-soft:#F3D3C7;
+}
+h1 em,h2 em,h3 em,.footer-line em{color:#B5654C}  /* large italic accents: 3.7:1 on porcelain (large text) */
+.promise-band,.site-footer,.join-card,.tier-premium{--line:rgba(255,255,255,.18);--line-strong:rgba(255,255,255,.28);--mark-1:#F7EDEA;--vs-1:#F7EDEA;--vs-2:#F3D3C7;--vs-3:#F3D3C7}
+.promise-band h2 em,.site-footer em,.join-card h2 em,.tier-premium .plus{color:#E8B4A0}   /* 3.06:1 on deep mist, large text only */
+.promise-band .eyebrow,.join-card .eyebrow,.site-footer .eyebrow,.tier-premium .o-tier span{color:#F7EDEA}  /* small text on mist: porcelain 4.9:1 */
+.join-card{background:radial-gradient(560px 360px at 100% 0%,rgba(243,211,199,.30),transparent 68%),radial-gradient(560px 380px at 0% 100%,rgba(185,198,210,.35),transparent 70%),var(--feature);box-shadow:0 50px 100px -50px rgba(60,80,100,.55)}
+.join-card .button,.jc-form .button{background:#F7EDEA;color:#4E1A3D}
+.promise-band,.site-footer{background:radial-gradient(900px 480px at 85% 0%,rgba(243,211,199,.22),transparent 65%),var(--feature)}
+.tier-premium{background:radial-gradient(700px 360px at 100% 0%,rgba(243,211,199,.26),transparent 70%),var(--feature)}
+.vi-symbol{background:radial-gradient(circle at 70% 25%,rgba(243,211,199,.7),transparent 65%),#E4E9EE}
+.pill-dot{background:#B5654C;box-shadow:0 0 0 4px rgba(181,101,76,.2)}
+body{background:var(--paper)}
+:root{--vs-2:#B5654C;--vs-3:#B5654C}
