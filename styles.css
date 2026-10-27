@@ -1,4 +1,4 @@
-/* VIRALA — pre-launch website. Brand identity v1 (brand/): signature wordmark, VIRALA Fig, typography-led; self-hosted type, no external requests. */
+/* VIRALA — pre-launch website. Earth identity (brand/BRAND.md, brand/tokens.json): Clay, Cocoa, Peach, Sand, Bone; self-hosted type, no external requests. */
 @font-face{font-family:"Instrument Serif";src:url("assets/instrument-serif.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Instrument Serif";src:url("assets/instrument-serif-italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
 @font-face{font-family:"DM Sans";src:url("assets/dm-sans.ttf") format("truetype");font-weight:100 1000;font-display:swap}
@@ -7,17 +7,19 @@
    Light is the VIRALA experience on every device; dark appears only when the visitor chooses it (remembered on their device). */
 :root{
   color-scheme:light;
-  /* VIRALA colour system v1 (brand/tokens): luminous blush porcelain, VIRALA Fig as the signature, fig-flesh clay as the
-     expressive accent. Values mirror brand/tokens/virala-tokens.css. */
-  --paper:#F7EDEA; --paper-2:#F1E1DF; --paper-3:#EFE1DE; --surface:#FFFAF8;
-  --ink:#22121D; --muted:#5A4352; --line:#E6D2CF; --line-strong:#D8BEC0; --edge:#94737F;
-  --brand:#4E1A3D; --brand-pressed:#3A1230; --on-brand:#FFF5F2; --mark:#4E1A3D;
-  --mark-1:#4E1A3D; --mark-2:#D9765C; --mark-3:#E9A7B4;
-  --data-1:#6E2A57; --routine-ink:#33563B; --routine-bg:#E2ECDE; --routine-dot:#5E8F67; --vira-bg:#ECE3F5; --vira-ink:#4D3577;
-  --feature:#4E1A3D; --on-feature:#FFF5F2; --on-feature-2:#E9CBD9; --feature-accent:#F5AC93;
-  --accent:#A13F28; --clay:#E07A5F; --accent-soft:#F4DDE7;
-  --focus:#A13F28;
+  /* VIRALA Earth (brand/tokens.json): Bone ground, Cocoa ink, Clay signature, Peach soft accent, Sand secondary surfaces.
+     Small accent text uses Clay text #A24E30 (5.2:1 on Bone); Clay #B0583A is for fills, buttons and the mark. */
+  --paper:#F8F3EC; --paper-2:#F1E7DA; --paper-3:#E6D5BF; --surface:#FCF8F2;
+  --ink:#3B2A24; --muted:#6A5246; --line:#E6D8C7; --line-strong:#D3BFA8; --edge:#8C7363;
+  --brand:#B0583A; --brand-pressed:#96472D; --on-brand:#FFFFFF; --mark:#3B2A24;
+  --mark-1:#3B2A24; --mark-2:#B0583A; --mark-3:#E9B79E;
+  --peach:#E9B79E; --sand:#E6D5BF; --cocoa:#3B2A24;
+  --data-1:#B0583A; --vira-bg:#F3E3D6; --vira-ink:#3B2A24;
+  --feature:#3B2A24; --on-feature:#F8F3EC; --on-feature-2:#D8C6B6; --feature-accent:#E9B79E;
+  --accent:#A24E30; --clay:#B0583A; --accent-soft:#F1DCCB;
+  --focus:#A24E30;
   --glow:none;
+  --shadow:59,42,36;
   --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
   --sans:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --gutter:clamp(20px,5vw,72px); --max:1320px;
@@ -26,16 +28,17 @@
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
-  /* fig night: purple-black depth (not brown), surfaces rising in colour, blossom as the brand and clay lifted for contrast */
-  --paper:#150C13; --paper-2:#1E1019; --paper-3:#0E070C; --surface:#24151F;
-  --ink:#F8EEF1; --muted:#D5C1CC; --line:#3A2734; --line-strong:#4E3644; --edge:#94798A;
-  --brand:#F1B8D2; --brand-pressed:#F7CFE1; --on-brand:#2A0D20; --mark:#F6E4EC;
-  --mark-1:#F6E4EC; --mark-2:#F2987C; --mark-3:#C98AB0;
-  --data-1:#E8AACC; --routine-ink:#B4D7B5; --routine-bg:#1E2D22; --routine-dot:#9FCBA5; --vira-bg:#2D2340; --vira-ink:#D7C6F3;
-  --feature:#3A1530; --on-feature:#FCEFF4; --on-feature-2:#DCC2D0; --feature-accent:#F5AC93;
-  --accent:#F5AC93; --clay:#F2987C; --accent-soft:#4A1C3B;
-  --focus:#F5AC93;
-  --glow:radial-gradient(1100px 620px at 88% -8%,rgba(142,63,114,.30),transparent 62%),radial-gradient(900px 520px at -10% 30%,rgba(78,26,61,.38),transparent 60%);
+  /* Earth night, built from Cocoa: deep cocoa ground, surfaces rising to Cocoa, Bone ink, Peach as the accent and button */
+  --paper:#2A1F1A; --paper-2:#33261F; --paper-3:#3B2A24; --surface:#3B2A24;
+  --ink:#F8F3EC; --muted:#D8C6B6; --line:#4A382F; --line-strong:#5E4A3F; --edge:#9C8574;
+  --brand:#E9B79E; --brand-pressed:#F2CDB9; --on-brand:#3B2A24; --mark:#F8F3EC;
+  --mark-1:#F8F3EC; --mark-2:#D7774F; --mark-3:#E9B79E;
+  --data-1:#E08A63; --vira-bg:#4A3229; --vira-ink:#F8F3EC;
+  --feature:#3B2A24; --on-feature:#F8F3EC; --on-feature-2:#D8C6B6; --feature-accent:#E9B79E;
+  --accent:#E9B79E; --clay:#D7774F; --accent-soft:#4A3229;
+  --focus:#E9B79E;
+  --shadow:0,0,0;
+  --glow:radial-gradient(1100px 620px at 88% -8%,rgba(176,88,58,.20),transparent 62%),radial-gradient(900px 520px at -10% 30%,rgba(59,42,36,.55),transparent 60%);
 }
 
 /* ---------- base ---------- */
@@ -115,7 +118,9 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 /* ---------- photographs (optional: the site is complete without them) ---------- */
 .photo{margin:0;position:relative;overflow:hidden;background:var(--paper-2);border-radius:2px}
 .photo>picture{height:100%}
-.photo img{width:100%;height:100%;object-fit:cover}
+.photo img{width:100%;height:100%;object-fit:cover;filter:sepia(.14) saturate(.9) contrast(.96) brightness(1.02)}
+/* one consistent grade for every photograph: warm, soft, slightly grainy natural light (display only; the files are untouched) */
+.photo::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.16;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* ---------- shared editorial details ---------- */
 /* the running line: section name, a hairline drawn across the measure, a quiet note on the right */
@@ -123,9 +128,10 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 .mh-eyebrow>span:first-child{color:var(--accent)}
 .mh-rule{flex:1 1 40px;height:1px;background:var(--line-strong);transform-origin:left center}
 .gift-n,.ch-n{display:block;font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.2;color:var(--accent);margin-bottom:10px;font-variant-numeric:lining-nums}
-/* feature bands: VIRALA Fig in light, deep fig with a soft glow in dark */
-.promise-band,.site-footer{--ink:var(--on-feature);--muted:var(--on-feature-2);--accent:var(--feature-accent);--line:rgba(255,255,255,.14);--line-strong:rgba(255,255,255,.22);--edge:rgba(255,255,255,.55);--focus:var(--feature-accent);--mark-1:#FFF5F2;--mark:#FFF5F2;--brand:#FFF5F2;--brand-pressed:#FBE3EC;--on-brand:#4E1A3D;background:radial-gradient(900px 480px at 85% 0%,rgba(142,63,114,.55),transparent 65%),var(--feature);color:var(--ink)}
-.promise-band ::selection,.site-footer ::selection{background:#8E3F72;color:#fff}
+/* Cocoa surfaces (feature bands, footer, the signup card): Bone ink, Peach accents, the mark in its on-Cocoa colours */
+.promise-band,.site-footer,.join-card{--ink:var(--on-feature);--muted:var(--on-feature-2);--accent:var(--feature-accent);--line:rgba(248,243,236,.14);--line-strong:rgba(248,243,236,.24);--edge:rgba(248,243,236,.55);--focus:var(--feature-accent);--mark-1:#F8F3EC;--mark-2:#D7774F;--mark-3:#E9B79E;--mark:#F8F3EC;background:radial-gradient(900px 480px at 85% 0%,rgba(176,88,58,.32),transparent 65%),var(--feature);color:var(--ink)}
+.promise-band,.site-footer{--brand:#E9B79E;--brand-pressed:#F2CDB9;--on-brand:#3B2A24}
+.promise-band ::selection,.site-footer ::selection,.join-card ::selection{background:#B0583A;color:#fff}
 
 /* ---------- brand lockup: the restored Life Chapters mark with the signature wordmark ---------- */
 .lockup{display:inline-flex;align-items:center;gap:11px}
@@ -136,24 +142,18 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 
 /* ---------- home: hero (one purpose: join the list) ---------- */
 .hero{padding-block:clamp(16px,2.6vw,40px) clamp(56px,6vw,96px)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);column-gap:clamp(32px,5vw,84px);align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);column-gap:clamp(32px,5vw,84px);align-items:center}
 .status-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 15px 7px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.8rem;font-weight:600;color:var(--muted);margin-bottom:clamp(18px,2.2vw,28px)}
 .pill-dot{width:8px;height:8px;border-radius:50%;background:var(--clay);box-shadow:0 0 0 4px color-mix(in srgb,var(--clay) 24%,transparent);flex:none}
 .hero h1{font-size:clamp(2.4rem,1.5rem + 3vw,4.2rem);line-height:.94;letter-spacing:-.035em;margin-bottom:clamp(18px,2vw,26px)}
 .hero .lede{max-width:31em}
 .join{margin-top:clamp(26px,3vw,40px);scroll-margin-top:110px}
-/* the brand plate: the Life Chapters mark at scale on VIRALA Fig, with the promise set in type */
-.plate{position:relative;border-radius:36px;overflow:hidden;aspect-ratio:1/1.08;--mark-1:#FFF5F2;--mark-2:#F2987C;--mark-3:#E9A7B4;background:radial-gradient(560px 420px at 92% 4%,rgba(224,122,95,.42),transparent 62%),radial-gradient(620px 460px at 0% 100%,rgba(142,63,114,.7),transparent 64%),var(--feature);color:var(--on-feature);box-shadow:0 40px 80px -48px rgba(40,10,25,.7)}
-.plate-inner{position:absolute;inset:0;display:grid;grid-template-rows:1fr auto;justify-items:center;padding:clamp(36px,5vw,64px) clamp(28px,4vw,56px) clamp(30px,3.6vw,48px)}
-.mark-plate{height:auto;width:min(46%,240px);align-self:center;filter:drop-shadow(0 30px 40px rgba(20,4,14,.35))}
-.plate-line{justify-self:start;font:400 clamp(1.44rem,0.94rem + 1.58vw,2.45rem)/.98 var(--serif);letter-spacing:-.02em}
-.plate-line em{color:var(--feature-accent)}
 
 /* the email signup: Kit's plain HTML form, styled as ours */
 .signup{max-width:34rem}
 .signup-label{display:block;font-weight:600;font-size:.98rem;margin-bottom:12px}
-.signup-row{display:flex;gap:8px;padding:6px;border-radius:999px;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 20px 40px -30px rgba(40,10,25,.55);transition:border-color .3s var(--ease),box-shadow .3s var(--ease)}
-.signup-row:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 18%,transparent),0 20px 40px -30px rgba(40,10,25,.55)}
+.signup-row{display:flex;gap:8px;padding:6px;border-radius:999px;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 20px 40px -30px rgba(var(--shadow),.4);transition:border-color .3s var(--ease),box-shadow .3s var(--ease)}
+.signup-row:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 18%,transparent),0 20px 40px -30px rgba(var(--shadow),.4)}
 .signup input{flex:1 1 auto;min-width:0;min-height:50px;padding:0 8px 0 20px;border:0;background:transparent;color:var(--ink);font:inherit;font-size:1rem}
 .signup input::placeholder{color:var(--edge);opacity:1}
 .signup input:focus{outline:none}
@@ -351,8 +351,7 @@ html:not(.js-ready) .filter{display:none}
 .js-ready .reveal.in{opacity:1;transform:none}
 .js-ready .hero-copy>*{animation:rise 1.1s var(--ease) both}
 .js-ready .hero-copy>*:nth-child(2){animation-delay:.06s}.js-ready .hero-copy>*:nth-child(3){animation-delay:.12s}.js-ready .hero-copy>*:nth-child(n+4){animation-delay:.2s}
-.js-ready .plate{animation:rise 1.3s .15s var(--ease) both}
-.js-ready .vira-hero h1,.js-ready .vira-hero .lede{animation:rise 1.1s .35s var(--ease) both}
+.js-ready .js-ready .vira-hero h1,.js-ready .vira-hero .lede{animation:rise 1.1s .35s var(--ease) both}
 .js-ready .vira-hero .lede{animation-delay:.55s}
 .js-ready .mh-rule{animation:draw 1.4s .2s var(--ease) both}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
@@ -368,8 +367,6 @@ html:not(.js-ready) .filter{display:none}
   .brief{position:static}
   .brief ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 24px}
   .hero-grid{grid-template-columns:minmax(0,1fr)}
-  .plate{margin-top:clamp(36px,5vw,52px);aspect-ratio:16/10}
-  .mark-plate{width:auto;height:58%}
   .offer-grid{grid-template-columns:minmax(0,1fr)}
   .offer-free h3{padding-top:24px}
 }
@@ -392,9 +389,7 @@ html:not(.js-ready) .filter{display:none}
   .signup-row{flex-direction:column;border-radius:24px;padding:6px}
   .signup input{padding:0 14px}
   .signup .button{width:100%;justify-content:center}
-  .plate{aspect-ratio:1/1;border-radius:28px}
-  .mark-plate{height:auto;width:42%}
-  .button-ig{width:100%;justify-content:center;font-size:.9rem;padding-inline:18px}
+      .button-ig{width:100%;justify-content:center;font-size:.9rem;padding-inline:18px}
   .main-nav .nav-join{display:none}
   .js-ready .main-nav .nav-join{display:inline-flex}
   .post-grid,.more-reading .post-grid{grid-template-columns:minmax(0,1fr)}
@@ -410,7 +405,7 @@ html:not(.js-ready) .filter{display:none}
   .wm{color:CanvasText}.mark path{fill:CanvasText}
   .mh-rule{background:CanvasText}
 }
-@media print{.site-header,.site-footer,.more-reading,.signup,.plate{display:none}.promise-band{background:none;color:#000}}
+@media print{.site-header,.site-footer,.more-reading,.signup,.promise-band{background:none;color:#000}}
 .journal-feed .post-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
 .standards{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 28px;padding:0 0 var(--section);font-family:var(--serif);font-size:clamp(1.25rem,1.1rem + .6vw,1.6rem);line-height:1.35}
 .standards .text-link{font-family:var(--sans)}
@@ -430,3 +425,21 @@ html:not(.js-ready) .filter{display:none}
 .ny-copy p+p{margin-top:1em}
 .ny-copy .text-link{margin-top:22px}
 @media (max-width:900px){.ny-panel{grid-template-columns:minmax(0,1fr)}}
+/* the hero's community card: a Cocoa card, the first screen's one strong visual */
+.join-card{position:relative;scroll-margin-top:100px;padding:clamp(28px,3.4vw,52px);border-radius:32px;border:1px solid rgba(233,183,158,.22);
+  background:radial-gradient(520px 340px at 100% 0%,rgba(176,88,58,.42),transparent 68%),radial-gradient(520px 360px at 0% 100%,rgba(233,183,158,.14),transparent 70%),var(--cocoa);
+  box-shadow:0 50px 100px -50px rgba(var(--shadow),.65)}
+.join-card .eyebrow{margin-bottom:14px}
+.join-card h2{font-size:clamp(2.1rem,1.4rem + 2.2vw,3.4rem);line-height:1;margin-bottom:16px}
+.jc-lede{color:var(--muted);max-width:30em;margin-bottom:clamp(22px,2.4vw,30px)}
+.jc-form{display:grid;gap:12px}
+.jc-form input{width:100%;min-height:60px;padding:0 20px;border-radius:16px;border:1px solid transparent;background:#F8F3EC;color:#3B2A24;font:inherit;font-size:1.05rem;transition:box-shadow .3s var(--ease)}
+.jc-form input::placeholder{color:#8C7363;opacity:1}
+.jc-form input:focus{outline:none;box-shadow:0 0 0 3px #E9B79E}
+/* Clay is the primary button; on Cocoa it carries a Peach hairline so its edge meets 3:1 */
+.jc-form .button{width:100%;justify-content:center;min-height:58px;border:1px solid #E9B79E;border-radius:16px;font-size:1rem;background:#B0583A;color:#FFFFFF}
+.jc-form .button:hover{background:#96472D}
+.jc-form .signup-note{margin-top:4px}
+.jc-form .signup-note a{color:inherit}
+@media (max-width:1100px){.join-card{margin-top:clamp(28px,5vw,40px)}}
+@media (forced-colors:active){.jc-form input{border:1px solid CanvasText}}
