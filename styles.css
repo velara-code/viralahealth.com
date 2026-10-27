@@ -124,7 +124,7 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 .mh-rule{flex:1 1 40px;height:1px;background:var(--line-strong);transform-origin:left center}
 .gift-n,.ch-n{display:block;font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.2;color:var(--accent);margin-bottom:10px;font-variant-numeric:lining-nums}
 /* feature bands: VIRALA Fig in light, deep fig with a soft glow in dark */
-.promise-band,.site-footer{--ink:var(--on-feature);--muted:var(--on-feature-2);--accent:var(--feature-accent);--line:rgba(255,255,255,.14);--line-strong:rgba(255,255,255,.22);--edge:rgba(255,255,255,.55);--focus:var(--feature-accent);--mark-1:#FFF5F2;--mark:#FFF5F2;--brand:#FFF5F2;--brand-pressed:#FBE3EC;--on-brand:#4E1A3D;background:radial-gradient(900px 480px at 85% 0%,rgba(142,63,114,.55),transparent 65%),var(--feature);color:var(--ink)}
+.promise-band,.site-footer,.join-card{--ink:var(--on-feature);--muted:var(--on-feature-2);--accent:var(--feature-accent);--line:rgba(255,255,255,.14);--line-strong:rgba(255,255,255,.22);--edge:rgba(255,255,255,.55);--focus:var(--feature-accent);--mark-1:#FFF5F2;--mark:#FFF5F2;--brand:#FFF5F2;--brand-pressed:#FBE3EC;--on-brand:#4E1A3D;background:radial-gradient(900px 480px at 85% 0%,rgba(142,63,114,.55),transparent 65%),var(--feature);color:var(--ink)}
 .promise-band ::selection,.site-footer ::selection{background:#8E3F72;color:#fff}
 
 /* ---------- brand lockup: the restored Life Chapters mark with the signature wordmark ---------- */
@@ -136,18 +136,12 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 
 /* ---------- home: hero (one purpose: join the list) ---------- */
 .hero{padding-block:clamp(16px,2.6vw,40px) clamp(56px,6vw,96px)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);column-gap:clamp(32px,5vw,84px);align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);column-gap:clamp(32px,5vw,84px);align-items:center}
 .status-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 15px 7px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.8rem;font-weight:600;color:var(--muted);margin-bottom:clamp(18px,2.2vw,28px)}
 .pill-dot{width:8px;height:8px;border-radius:50%;background:var(--clay);box-shadow:0 0 0 4px color-mix(in srgb,var(--clay) 24%,transparent);flex:none}
-.hero h1{font-size:clamp(2.4rem,1.5rem + 3vw,4.2rem);line-height:.94;letter-spacing:-.035em;margin-bottom:clamp(18px,2vw,26px)}
-.hero .lede{max-width:31em}
+.hero h1{font-size:clamp(2.9rem,1.5rem + 4.4vw,5.8rem);line-height:.92;letter-spacing:-.035em;margin-bottom:clamp(18px,2vw,26px)}
+.hero .lede{max-width:28em;font-size:clamp(1.15rem,1.02rem + .5vw,1.4rem);color:var(--muted)}
 .join{margin-top:clamp(26px,3vw,40px);scroll-margin-top:110px}
-/* the brand plate: the Life Chapters mark at scale on VIRALA Fig, with the promise set in type */
-.plate{position:relative;border-radius:36px;overflow:hidden;aspect-ratio:1/1.08;--mark-1:#FFF5F2;--mark-2:#F2987C;--mark-3:#E9A7B4;background:radial-gradient(560px 420px at 92% 4%,rgba(224,122,95,.42),transparent 62%),radial-gradient(620px 460px at 0% 100%,rgba(142,63,114,.7),transparent 64%),var(--feature);color:var(--on-feature);box-shadow:0 40px 80px -48px rgba(40,10,25,.7)}
-.plate-inner{position:absolute;inset:0;display:grid;grid-template-rows:1fr auto;justify-items:center;padding:clamp(36px,5vw,64px) clamp(28px,4vw,56px) clamp(30px,3.6vw,48px)}
-.mark-plate{height:auto;width:min(46%,240px);align-self:center;filter:drop-shadow(0 30px 40px rgba(20,4,14,.35))}
-.plate-line{justify-self:start;font:400 clamp(1.44rem,0.94rem + 1.58vw,2.45rem)/.98 var(--serif);letter-spacing:-.02em}
-.plate-line em{color:var(--feature-accent)}
 
 /* the email signup: Kit's plain HTML form, styled as ours */
 .signup{max-width:34rem}
@@ -351,8 +345,7 @@ html:not(.js-ready) .filter{display:none}
 .js-ready .reveal.in{opacity:1;transform:none}
 .js-ready .hero-copy>*{animation:rise 1.1s var(--ease) both}
 .js-ready .hero-copy>*:nth-child(2){animation-delay:.06s}.js-ready .hero-copy>*:nth-child(3){animation-delay:.12s}.js-ready .hero-copy>*:nth-child(n+4){animation-delay:.2s}
-.js-ready .plate{animation:rise 1.3s .15s var(--ease) both}
-.js-ready .vira-hero h1,.js-ready .vira-hero .lede{animation:rise 1.1s .35s var(--ease) both}
+.js-ready .js-ready .vira-hero h1,.js-ready .vira-hero .lede{animation:rise 1.1s .35s var(--ease) both}
 .js-ready .vira-hero .lede{animation-delay:.55s}
 .js-ready .mh-rule{animation:draw 1.4s .2s var(--ease) both}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
@@ -368,8 +361,6 @@ html:not(.js-ready) .filter{display:none}
   .brief{position:static}
   .brief ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 24px}
   .hero-grid{grid-template-columns:minmax(0,1fr)}
-  .plate{margin-top:clamp(36px,5vw,52px);aspect-ratio:16/10}
-  .mark-plate{width:auto;height:58%}
   .offer-grid{grid-template-columns:minmax(0,1fr)}
   .offer-free h3{padding-top:24px}
 }
@@ -392,9 +383,7 @@ html:not(.js-ready) .filter{display:none}
   .signup-row{flex-direction:column;border-radius:24px;padding:6px}
   .signup input{padding:0 14px}
   .signup .button{width:100%;justify-content:center}
-  .plate{aspect-ratio:1/1;border-radius:28px}
-  .mark-plate{height:auto;width:42%}
-  .button-ig{width:100%;justify-content:center;font-size:.9rem;padding-inline:18px}
+      .button-ig{width:100%;justify-content:center;font-size:.9rem;padding-inline:18px}
   .main-nav .nav-join{display:none}
   .js-ready .main-nav .nav-join{display:inline-flex}
   .post-grid,.more-reading .post-grid{grid-template-columns:minmax(0,1fr)}
@@ -410,7 +399,7 @@ html:not(.js-ready) .filter{display:none}
   .wm{color:CanvasText}.mark path{fill:CanvasText}
   .mh-rule{background:CanvasText}
 }
-@media print{.site-header,.site-footer,.more-reading,.signup,.plate{display:none}.promise-band{background:none;color:#000}}
+@media print{.site-header,.site-footer,.more-reading,.signup,.promise-band{background:none;color:#000}}
 .journal-feed .post-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
 .standards{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 28px;padding:0 0 var(--section);font-family:var(--serif);font-size:clamp(1.25rem,1.1rem + .6vw,1.6rem);line-height:1.35}
 .standards .text-link{font-family:var(--sans)}
@@ -430,3 +419,76 @@ html:not(.js-ready) .filter{display:none}
 .ny-copy p+p{margin-top:1em}
 .ny-copy .text-link{margin-top:22px}
 @media (max-width:900px){.ny-panel{grid-template-columns:minmax(0,1fr)}}
+/* the hero's community card: the signup is the first screen's visual focus */
+.join-card{position:relative;scroll-margin-top:100px;padding:clamp(30px,3.6vw,56px);border-radius:32px;border:1px solid rgba(255,255,255,.08);background:radial-gradient(560px 360px at 100% 0%,rgba(224,122,95,.38),transparent 68%),radial-gradient(560px 380px at 0% 100%,rgba(142,63,114,.6),transparent 70%),var(--feature);box-shadow:0 50px 100px -48px rgba(40,10,25,.7)}
+.join-card .eyebrow{margin-bottom:14px}
+.join-card h2{font-size:clamp(2.1rem,1.4rem + 2.2vw,3.4rem);line-height:1;margin-bottom:16px}
+.jc-lede{color:var(--muted);max-width:30em;margin-bottom:clamp(24px,2.6vw,34px)}
+.jc-form{display:grid;gap:12px}
+.jc-form input{width:100%;min-height:60px;padding:0 20px;border-radius:16px;border:1px solid transparent;background:#FFF5F2;color:#22121D;font:inherit;font-size:1.05rem;transition:box-shadow .3s var(--ease)}
+.jc-form input::placeholder{color:#94737F;opacity:1}
+.jc-form input:focus{outline:none;box-shadow:0 0 0 3px var(--feature-accent)}
+.jc-form .button{width:100%;justify-content:center;min-height:58px;border:0;border-radius:16px;font-size:1rem}
+.jc-form .signup-note{margin-top:4px}
+:root{--peach:#F6C2B0}
+:root[data-theme="dark"]{--peach:#6B2E4A}
+:root[data-theme="dark"] .join-card{box-shadow:0 44px 90px -50px rgba(0,0,0,.8)}
+@media (max-width:1100px){.join-card{margin-top:clamp(28px,5vw,40px)}}
+@media (forced-colors:active){.jc-form input{border:1px solid CanvasText}}
+/* ---------- focus pass (27 Oct): one focal point per section; hierarchy, scale and air ---------- */
+.hero{padding-block:clamp(20px,3vw,48px) clamp(72px,8vw,128px)}
+.jc-form .signup-note a{color:inherit}
+/* Not feeling like yourself? An open, centred moment: headline, one line, one link */
+.not-yourself{padding-block:clamp(24px,3vw,48px) clamp(80px,9vw,140px)}
+.ny-focus{max-width:860px;margin-inline:auto;text-align:center;display:grid;justify-items:center}
+.ny-focus h2{font-size:clamp(2.6rem,1.5rem + 4vw,5.2rem);line-height:.95;letter-spacing:-.03em;margin-bottom:clamp(20px,2.4vw,30px)}
+.ny-line{font-size:clamp(1.15rem,1.02rem + .5vw,1.4rem);line-height:1.55;color:var(--muted);max-width:32em;margin-bottom:clamp(22px,2.6vw,32px)}
+/* Why VIRALA: three big numbered steps */
+.approach{padding-block:clamp(72px,8vw,128px);border-top:1px solid var(--line)}
+.approach .sec-head{max-width:38em;margin-bottom:clamp(40px,5vw,72px)}
+.approach .sec-head h2,.offer .sec-head h2{font-size:clamp(2.1rem,1.3rem + 2.8vw,3.8rem);line-height:1}
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(32px,4vw,64px)}
+.step-n{display:block;font:italic 400 clamp(3.4rem,2rem + 4vw,6rem)/.9 var(--serif);color:var(--accent);letter-spacing:-.04em;margin-bottom:18px}
+.step h3{font-size:clamp(1.5rem,1.2rem + 1vw,2.1rem);line-height:1.08;margin-bottom:12px}
+.step p{color:var(--muted);max-width:24em}
+/* What we're building: Free and Premium, readable at a glance */
+.offer{padding-block:clamp(56px,6vw,96px) clamp(80px,9vw,140px)}
+.tiers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.tier{border-radius:32px;padding:clamp(28px,3.4vw,52px);border:1px solid var(--line)}
+.tier-free{background:var(--surface)}
+.tier-premium{background:radial-gradient(700px 360px at 100% 0%,color-mix(in srgb,var(--clay) 16%,transparent),transparent 70%),var(--paper-2)}
+.tier h3{font-size:clamp(1.7rem,1.3rem + 1vw,2.2rem);margin:clamp(14px,1.6vw,20px) 0 0}
+.tier .o-tier{margin:0}
+.tier ul{list-style:none;padding:0;margin:clamp(20px,2.4vw,30px) 0 0}
+.tier li{display:grid;gap:4px;padding:16px 0;border-top:1px solid var(--line-strong)}
+.tier li b{font:400 clamp(1.35rem,1.15rem + .6vw,1.7rem)/1.1 var(--serif)}
+.tier li span{color:var(--muted);font-size:.98rem}
+.offer-note{margin-top:22px}
+/* Our promise: a calm full-width lilac band */
+.promise-calm{background:var(--vira-bg);padding-block:clamp(80px,10vw,150px)}
+.promise-calm .promise-inner{text-align:center;display:grid;justify-items:center}
+.promise-calm h2{font-size:clamp(2.6rem,1.5rem + 4vw,5.2rem);line-height:.95;letter-spacing:-.03em;margin-bottom:clamp(20px,2.4vw,30px)}
+.promise-calm p:not(.eyebrow){color:var(--muted);max-width:34em;font-size:clamp(1.1rem,1rem + .4vw,1.3rem)}
+/* Journal: image, category, title, time */
+.journal-mini{padding-block:clamp(80px,9vw,140px) clamp(56px,6vw,96px)}
+.journal-mini .post-title{font-size:clamp(1.5rem,1.2rem + 1vw,2.1rem)}
+/* Meet Vira and About: clearer hierarchy, more air, bigger key lines (no text removed) */
+.vira-hero h1{font-size:clamp(3.2rem,1.8rem + 5vw,6.4rem);line-height:.9}
+.vira-hero .lede{font-size:clamp(1.15rem,1.02rem + .5vw,1.4rem)}
+.vira-chapters{padding-top:clamp(24px,3vw,48px)}
+.vira-chapters .section-title{font-size:clamp(2.1rem,1.3rem + 2.8vw,3.8rem);line-height:1;margin-bottom:clamp(40px,5vw,72px)}
+.chapters li{padding:clamp(28px,3.4vw,48px) 0}
+.chapters .ch-n{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.6rem)}
+.chapters h3{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.6rem)}
+.chapters p{font-size:1.05rem}
+.page-about .page-hero h1{font-size:clamp(2.6rem,1.5rem + 4vw,5.2rem);line-height:.95}
+.page-about .page-hero .lede{font-size:clamp(1.15rem,1.02rem + .5vw,1.4rem)}
+.beliefs{padding-block:clamp(24px,3vw,48px) clamp(80px,9vw,140px)}
+.beliefs-head h2{font-size:clamp(2.1rem,1.3rem + 2.8vw,3.8rem);line-height:1}
+.gifts{row-gap:clamp(40px,4.4vw,64px)}
+.gifts h3{font-size:clamp(1.5rem,1.2rem + 1vw,2.1rem);line-height:1.08;margin-bottom:12px}
+.gifts p{font-size:1.02rem}
+.editorial .sec-head h2,.faq-wrap h2{font-size:clamp(2.1rem,1.3rem + 2.8vw,3.8rem);line-height:1}
+@media (max-width:900px){.steps,.tiers{grid-template-columns:minmax(0,1fr)}.ny-focus{text-align:left;justify-items:start}.promise-calm .promise-inner{text-align:left;justify-items:start}}
+.tiers{align-items:start}
+.approach .sec-head,.offer .sec-head{max-width:54em}
