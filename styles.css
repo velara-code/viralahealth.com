@@ -204,7 +204,7 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 .img-band h2{text-shadow:0 2px 24px rgba(19,29,41,.35)}
 .img-band .ny-line{text-shadow:0 1px 14px rgba(19,29,41,.35)}
 .ny-focus{max-width:860px;margin-inline:auto;text-align:center;display:grid;justify-items:center}
-.ny-focus h2{font-size:var(--fs-h2);line-height:1.04;letter-spacing:-.02em;margin-bottom:clamp(14px,1.6vw,20px)}
+.ny-focus h2{font-size:clamp(2.5rem,1.4rem + 3.6vw,4.375rem);line-height:1;letter-spacing:-.025em;margin-bottom:clamp(16px,1.8vw,24px)} /* the one exception to the H2 cap */
 .ny-line{font-size:var(--fs-lede);line-height:1.55;max-width:32em;margin-bottom:clamp(18px,2vw,24px)}
 
 /* ---------- homepage: Why VIRALA ---------- */
@@ -228,13 +228,7 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 .tier li .ck,.tier li .vs-item{margin-top:4px}
 .tier li b{display:block;font:450 var(--fs-h4)/1.25 var(--serif)}
 .tier li span{display:block;font-size:var(--fs-small);line-height:1.5}
-.tier-premium li.own b{font-size:clamp(1.25rem,1.15rem + .4vw,1.5rem);line-height:1.2}
-.tier-premium li.own span{font-size:.94rem}
-.tier-premium li.own .vs-item{width:24px;height:24px}
-.tier-premium li.own .ck{width:20px;height:20px;margin-top:5px}
-.tier-premium li.shared{padding-block:7px}
-.tier-premium li.shared b{font-size:1.05rem}
-.tier-premium li.own+li.shared{border-top:1px solid var(--line-strong);margin-top:6px}
+.tier li .vs-item{width:18px;height:18px}
 .ptag{font:600 .7rem/1 var(--sans);font-style:normal;letter-spacing:.12em;text-transform:uppercase;color:var(--porcelain);background:transparent;border:1px solid rgba(250,245,242,.6);border-radius:999px;padding:5px 9px;align-self:center}
 
 /* ---------- homepage: Meet Vira (a deep Dusk band) ---------- */
@@ -474,7 +468,7 @@ html:not(.js-ready) .filter{display:none}
   .mh-eyebrow>span:last-child{display:none}
   .gifts{grid-template-columns:minmax(0,1fr)}
   .tier li{column-gap:12px}
-  .ptag{grid-column:2;justify-self:start;margin-top:8px}
+  .ptag{padding:4px 7px;font-size:.62rem}
   .footer-top{grid-template-columns:minmax(0,1fr)}
   .article-meta span+span::before{display:none}
 }
