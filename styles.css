@@ -511,12 +511,16 @@ html:not(.js-ready) .filter{display:none}
 /* Why VIRALA: the contrast line and the small closing line */
 .approach .sec-head .lede{margin-top:16px}
 .steps-note{margin-top:clamp(20px,2.4vw,32px);font-size:var(--fs-small)}
-/* Why you can trust VIRALA: four compact points */
-.trust-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.2vw,32px)}
-.trust-grid li{padding-top:16px;border-top:1px solid var(--line-strong)}
-.trust-grid h3{font-size:var(--fs-h4);line-height:1.25;margin-bottom:8px}
-.trust-grid p{font-size:var(--fs-small);line-height:1.55}
-.trust{border-top:1px solid var(--line)}
+/* Why you can trust VIRALA: the most important answer, so it gets its own focus: four roomy cards, 2 x 2 */
+.trust{padding-block:clamp(64px,7vw,104px)}
+.trust .sec-head{margin-bottom:clamp(24px,3vw,40px)}
+.trust-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.8vw,24px)}
+.trust-grid li{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:clamp(16px,1.8vw,22px);align-content:start;padding:clamp(24px,2.8vw,40px);border-radius:28px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+.trust-icon{grid-row:span 2;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:color-mix(in srgb,var(--eyebrow) 9%,transparent)}
+.trust-icon svg{width:24px;height:24px;fill:none;stroke:var(--eyebrow);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.trust-grid h3{font-size:var(--fs-h3);line-height:1.16;margin:10px 0 8px}
+.trust-grid p{max-width:30em}
+:root[data-theme="dark"] .trust-grid li{background:linear-gradient(180deg,#1C2633,#18202C);border-color:rgba(244,240,236,.09)}
 /* the final signup: what happens next */
 .next-steps{list-style:none;counter-reset:n;padding:0;margin:8px 0 0;display:grid;gap:6px}
 .next-steps li{counter-increment:n;display:grid;grid-template-columns:1.6em minmax(0,1fr);align-items:baseline}
@@ -524,6 +528,5 @@ html:not(.js-ready) .filter{display:none}
 /* Meet Vira: who she is for */
 .vi-for{font-family:var(--serif);font-style:italic;font-size:clamp(1.125rem,1.06rem + .25vw,1.3rem);line-height:1.45;max-width:30em;margin:-6px 0 clamp(18px,2vw,26px)}
 .page-next{margin-top:1.6em}
-@media (max-width:1100px){.trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){.path-grid{grid-template-columns:minmax(0,1fr)}.path{min-height:auto}.path-sea .path-body{padding-top:clamp(140px,40vw,200px)}}
-@media (max-width:600px){.trust-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.trust-grid{grid-template-columns:minmax(0,1fr)}.trust-grid li{grid-template-columns:minmax(0,1fr)}.trust-icon{grid-row:auto;margin-bottom:4px}}
