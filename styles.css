@@ -51,7 +51,7 @@
   /* Dark (28 Oct): a near-black, neutral ground so the Dusk surfaces glow and the rose punches; graphite for ordinary
      cards; Dusk only for the sections that carry weight (hero card, Premium, Meet Vira, promises, footer). */
   color-scheme:dark;
-  --bg:#0D1014; --surface:#171B21; --text:#F4F0EC;
+  --bg:#0F1620; --surface:#1A2330; --text:#F4F0EC;
   --line:rgba(244,240,236,.1); --line-strong:rgba(244,240,236,.2); --edge:#8E98A4;
   --eyebrow:#C3CFDA; --accent:#F4F0EC; --italic:var(--rose); --marker:#C3CFDA;
   --btn:var(--porcelain); --btn-hover:#FFFFFF; --btn-text:var(--ink);
@@ -62,11 +62,10 @@
   --shadow-deep:0 40px 90px -40px rgba(0,0,0,.85),0 0 0 1px rgba(244,240,236,.06);
   --shadow-soft:0 0 0 1px rgba(244,240,236,.06);
 }
-:root[data-theme="dark"] .photo{background:#1F242C}
-:root[data-theme="dark"] .prose code{background:#1F242C;color:var(--text)}
-:root[data-theme="dark"] .tier-free,:root[data-theme="dark"] .vcard,:root[data-theme="dark"] .welcome-cards a,:root[data-theme="dark"] .join-end-inner,:root[data-theme="dark"] .brief,:root[data-theme="dark"] .refs{background:linear-gradient(180deg,#191E25,#151920);border-color:rgba(244,240,236,.09)}
+:root[data-theme="dark"] .photo{background:#1F2937}
+:root[data-theme="dark"] .prose code{background:#1F2937;color:var(--text)}
+:root[data-theme="dark"] .tier-free,:root[data-theme="dark"] .vcard,:root[data-theme="dark"] .welcome-cards a,:root[data-theme="dark"] .join-end-inner,:root[data-theme="dark"] .brief,:root[data-theme="dark"] .refs{background:linear-gradient(180deg,#1C2633,#18202C);border-color:rgba(244,240,236,.09)}
 :root[data-theme="dark"] .site-header{background:color-mix(in srgb,var(--bg) 82%,transparent)}
-:root[data-theme="dark"] .site-footer{box-shadow:inset 0 1px 0 rgba(244,240,236,.1)}
 /* Dusk surfaces: porcelain text, peach italics, porcelain buttons with ink text, the light mark */
 .deep,.join-card,.tier-premium,.site-footer,.promise-band,.thanks-ig{
   --text:var(--porcelain); --eyebrow:var(--porcelain); --italic:var(--rose); --accent:var(--porcelain); --marker:var(--porcelain);
@@ -486,3 +485,23 @@ html:not(.js-ready) .filter{display:none}
 }
 @media print{.site-header,.site-footer,.more-reading,.signup,.join-end,.promise-band{display:none}body{background:none;color:#000}}
 .page-vira .promise-band{padding-block:clamp(44px,5vw,72px)}
+/* ---------- one continuous page (28 Oct): Dusk bands and the sea melt into the ground; the glow spills over the edge ----------
+   The fade lives inside each band's own padding (never under text). Same in light and dark. */
+:root{--fade:clamp(40px,5vw,72px);--spill:clamp(36px,4.5vw,72px)}
+.deep,.promise-band,.site-footer{position:relative;isolation:isolate}
+.deep>*,.promise-band>*,.site-footer>*{position:relative;z-index:2}
+.deep::before,.promise-band::before,.img-band::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 62%,transparent) 32%,color-mix(in srgb,var(--bg) 22%,transparent) 66%,transparent 100%) top/100% var(--fade) no-repeat,
+             linear-gradient(0deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 62%,transparent) 32%,color-mix(in srgb,var(--bg) 22%,transparent) 66%,transparent 100%) bottom/100% var(--fade) no-repeat}
+.deep::before,.promise-band::before{z-index:0}
+.img-band::after{z-index:-1}
+.site-footer::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 62%,transparent) 32%,color-mix(in srgb,var(--bg) 22%,transparent) 66%,transparent 100%) top/100% var(--fade) no-repeat}
+/* the glow spills softly across the top edge of the Meet Vira band and the footer */
+.deep.glow::after,.site-footer::after{content:"";position:absolute;left:0;right:0;top:calc(-1 * var(--spill));height:calc(var(--spill) * 3);z-index:1;pointer-events:none;
+  background:radial-gradient(38% 50% at 84% 40%,rgba(240,178,156,.26),rgba(232,166,177,.1) 50%,transparent 74%)}
+/* where a Dusk section runs straight into the footer (Meet Vira), they flow into one another: no fade, no seam */
+body:has(main>.promise-band:last-child) .promise-band::before{background:linear-gradient(180deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 62%,transparent) 32%,color-mix(in srgb,var(--bg) 22%,transparent) 66%,transparent 100%) top/100% var(--fade) no-repeat}
+body:has(main>.promise-band:last-child) .promise-band{background:linear-gradient(180deg,#283F58 0%,#22364D 55%,#283F58 100%)}
+body:has(main>.promise-band:last-child) .site-footer::before{display:none}
+body:has(main>.promise-band:last-child) .site-footer{background:radial-gradient(560px 240px at 84% 62%,rgba(240,178,156,.38),rgba(232,166,177,.15) 44%,transparent 72%),radial-gradient(460px 340px at 6% 104%,rgba(232,166,177,.24),transparent 68%),linear-gradient(180deg,#283F58 0%,#22364D 50%,#18263A 100%)}
