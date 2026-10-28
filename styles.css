@@ -48,18 +48,25 @@
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 :root[data-theme="dark"]{
+  /* Dark (28 Oct): a near-black, neutral ground so the Dusk surfaces glow and the rose punches; graphite for ordinary
+     cards; Dusk only for the sections that carry weight (hero card, Premium, Meet Vira, promises, footer). */
   color-scheme:dark;
-  --bg:var(--night); --surface:#1C2A3A; --text:var(--porcelain);
-  --line:rgba(250,245,242,.12); --line-strong:rgba(250,245,242,.24); --edge:#93A0AE;
-  --eyebrow:var(--mist); --accent:var(--porcelain); --italic:var(--rose); --marker:var(--mist);
+  --bg:#0D1014; --surface:#171B21; --text:#F4F0EC;
+  --line:rgba(244,240,236,.1); --line-strong:rgba(244,240,236,.2); --edge:#8E98A4;
+  --eyebrow:#C3CFDA; --accent:#F4F0EC; --italic:var(--rose); --marker:#C3CFDA;
   --btn:var(--porcelain); --btn-hover:#FFFFFF; --btn-text:var(--ink);
   --m1:var(--porcelain); --m2:var(--peach); --m3:var(--rose);
   --vs-1:var(--porcelain); --vs-2:var(--rose);
-  --focus:var(--mist);
-  --page-glow:radial-gradient(1100px 640px at 100% -12%,rgba(61,90,120,.38),transparent 62%);
-  --shadow-deep:0 44px 90px -44px rgba(0,0,0,.7);
-  --shadow-soft:0 24px 60px -40px rgba(0,0,0,.6);
+  --focus:#C3CFDA;
+  --page-glow:radial-gradient(1000px 600px at 100% -14%,rgba(44,69,96,.34),transparent 62%);
+  --shadow-deep:0 40px 90px -40px rgba(0,0,0,.85),0 0 0 1px rgba(244,240,236,.06);
+  --shadow-soft:0 0 0 1px rgba(244,240,236,.06);
 }
+:root[data-theme="dark"] .photo{background:#1F242C}
+:root[data-theme="dark"] .prose code{background:#1F242C;color:var(--text)}
+:root[data-theme="dark"] .tier-free,:root[data-theme="dark"] .vcard,:root[data-theme="dark"] .welcome-cards a,:root[data-theme="dark"] .join-end-inner,:root[data-theme="dark"] .brief,:root[data-theme="dark"] .refs{background:linear-gradient(180deg,#191E25,#151920);border-color:rgba(244,240,236,.09)}
+:root[data-theme="dark"] .site-header{background:color-mix(in srgb,var(--bg) 82%,transparent)}
+:root[data-theme="dark"] .site-footer{box-shadow:inset 0 1px 0 rgba(244,240,236,.1)}
 /* Dusk surfaces: porcelain text, peach italics, porcelain buttons with ink text, the light mark */
 .deep,.join-card,.tier-premium,.site-footer,.promise-band,.thanks-ig{
   --text:var(--porcelain); --eyebrow:var(--porcelain); --italic:var(--rose); --accent:var(--porcelain); --marker:var(--porcelain);
@@ -294,7 +301,7 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 .ig{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;flex:none}.ig .ig-dot{fill:currentColor;stroke:none}
 .button-ig{min-height:56px;padding:15px 26px 15px 22px}
 .page-welcome{background:radial-gradient(900px 520px at 50% 6%,rgba(255,255,255,.95),transparent 66%),radial-gradient(900px 420px at 50% 78%,rgba(232,166,177,.16),transparent 70%),var(--bg);background-repeat:no-repeat}
-:root[data-theme="dark"] .page-welcome{background:radial-gradient(900px 560px at 50% -8%,rgba(61,90,120,.45),transparent 66%),var(--bg);background-repeat:no-repeat}
+:root[data-theme="dark"] .page-welcome{background:radial-gradient(900px 520px at 50% -6%,rgba(44,69,96,.42),transparent 66%),var(--bg);background-repeat:no-repeat}
 .app-mark{display:block;width:clamp(80px,8vw,96px);height:auto;border-radius:22.3%;box-shadow:var(--shadow-deep);margin-bottom:clamp(20px,2.4vw,28px)}
 .welcome-cards{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px);width:100%;text-align:left}
 .welcome-cards a{display:flex;flex-direction:column;gap:10px;height:100%;padding:clamp(24px,2.4vw,32px);border-radius:26px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-soft);text-decoration:none;transition:transform .35s var(--ease),border-color .35s var(--ease)}
@@ -313,7 +320,7 @@ html:not(.js-ready) .theme-toggle,html:not(.js-ready) .menu-toggle{display:none}
 .vi-copy .lede{max-width:36em;margin-bottom:clamp(18px,2vw,26px)}
 .vi-art{position:relative;display:grid;place-items:center;aspect-ratio:1;max-width:320px;width:100%;justify-self:center}
 .vi-art::before{content:"";position:absolute;inset:4%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(235,180,159,.55),rgba(232,166,177,.32) 38%,rgba(220,229,236,.22) 60%,transparent 72%);filter:blur(10px)}
-:root[data-theme="dark"] .vi-art::before{background:radial-gradient(circle at 50% 50%,rgba(232,166,177,.28),rgba(61,90,120,.4) 45%,transparent 72%)}
+:root[data-theme="dark"] .vi-art::before{background:radial-gradient(circle at 50% 50%,rgba(240,178,156,.3),rgba(196,119,132,.2) 34%,rgba(44,69,96,.32) 54%,transparent 72%)}
 .vi-art .vs-hero{position:relative;width:52%;height:auto}
 .vira-points{padding-block:clamp(16px,2vw,28px) clamp(48px,5vw,72px)}
 .vira-points h2{margin-bottom:clamp(16px,2vw,24px)}
