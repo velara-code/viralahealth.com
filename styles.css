@@ -1,8 +1,8 @@
 /* VIRALA — website. Brand: VIRALA Dusk (brand/BRAND.md, brand/tokens.json). Self-hosted type, no external requests. */
-@font-face{font-family:"Newsreader";src:url("assets/newsreader.woff2") format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
-@font-face{font-family:"Newsreader";src:url("assets/newsreader-italic.woff2") format("woff2");font-weight:300 700;font-style:italic;font-display:swap}
-@font-face{font-family:"Hanken Grotesk";src:url("assets/hanken-grotesk.woff2") format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
-@font-face{font-family:"Hanken Grotesk";src:url("assets/hanken-grotesk-italic.woff2") format("woff2");font-weight:300 700;font-style:italic;font-display:swap}
+@font-face{font-family:"Newsreader";src:url("assets/newsreader.woff2") format("woff2");font-weight:400 460;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url("assets/newsreader-italic.woff2") format("woff2");font-weight:400 460;font-style:italic;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url("assets/hanken-grotesk.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url("assets/hanken-grotesk-italic.woff2") format("woff2");font-weight:400 700;font-style:italic;font-display:swap}
 
 /* ---------- tokens ----------
    Light is the VIRALA experience; dark appears only when the visitor chooses it (remembered on their device).
@@ -503,3 +503,5 @@ html:not(.js-ready) .filter{display:none}
 :root[data-theme="dark"] body:has(main>.promise-band:last-child) .promise-band{background:linear-gradient(180deg,#283F58 0%,#22364D 55%,#283F58 100%)}
 :root[data-theme="dark"] body:has(main>.promise-band:last-child) .site-footer::before{display:none}
 :root[data-theme="dark"] body:has(main>.promise-band:last-child) .site-footer{background:radial-gradient(560px 240px at 84% 62%,rgba(240,178,156,.38),rgba(232,166,177,.15) 44%,transparent 72%),radial-gradient(460px 340px at 6% 104%,rgba(232,166,177,.24),transparent 68%),linear-gradient(180deg,#283F58 0%,#22364D 50%,#18263A 100%)}
+/* dark mode only (28 Oct): the rose accent a touch lighter (same hue) so it glows on the dark ground as clearly as in light mode */
+:root[data-theme="dark"],:root[data-theme="dark"] :is(.deep,.join-card,.tier-premium,.site-footer,.promise-band,.thanks-ig,.img-band){--italic:#D6919C}
